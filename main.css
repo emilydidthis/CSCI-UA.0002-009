@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: IBM Plex Sans;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+body {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 40px;
+    line-height: 125%;
+}
+body {
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+body a {
+    color: #551A8B;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+nav {
+    margin: 20px 0px;
+}
+
+nav span {
+    display: none;
+}
+
+nav ul:hover span {
+    display: inline-block;
+}
+
+nav a:active {
+    color: #551A8B;
+}
+
+nav a {
+    color: black;
+    font-weight: 500;
+}
+
+.nav-targeted {
+    display: inline-block;
+    
+}
+
+.section, .week-row {
+    border-left: 2px solid #2E38B7;
+    padding-left: 15px;
+    margin-bottom: 30px
+}
+
+.section h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section ul, .week-content div {
+    border-left: 2px solid #A42EB7;
+    padding-left: 15px;
+    padding-right: 20px;
+    margin: 15px 0px;
+}
+
+.section ol {
+    margin-left: 20px;
+}
+
+.section ol li {
+    padding-left: 10px;
+}
+
+.section h3, .week-row h3, .week-row h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.week-content {
+    display: flex;
+}
+
+.week div {
+    padding-right: 20px;
+}
+
+.week-content ul li {
+    list-style-type: none;
+}
+
+/* .week-content ul li::before{
+    content: "* ";
+} */
+
+.topics {
+    flex: 45%;
+}
+
+.assigned {
+    flex: 40%;
+}
+
+.notes {
+    flex: 15%;
+}
+
+/* two column layout */
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.basic-info {
+    flex: 35%;
+    padding-right: 50px;
+}
+
+.syllabus {
+    flex: 65%;
+}
+
+.assignments {
+    flex: 55%;
+}
+
+@media only screen and (max-width: 900px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    body {
+        margin: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    body {
+        margin: 20px;
+    }
+  }
+
