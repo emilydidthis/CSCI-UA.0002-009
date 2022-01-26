@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="../index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="../schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="../assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class="section assignment-page">
+                <h2>Assignment #1</h2>
+
+                <p>For this assignment you will be writing 3 programs which should be saved independently as their own ".py" file. The filename you should use for each program is outlined in the sections below.  When you're finished you should submit your programs to the Assignment #1 category inside of NYU Classes.</p>
+                <p>You may work by yourself or with a partner. If you choose to work with someone else please be sure to give them credit in your source code and on NYU classes when you submit your work. Each member of a team must submit their own copy of the assignment to get credit for the assignment.</p>
+            
+                
+                    <h3>Problem #1: Variables & Print Statements</h3>
+                    <p>Given the following variables:
+<pre>
+score1 = 100
+score2 = 94
+score3 = 88
+first_name = "Ada"
+last_name = "Lovelace"
+class_curve = 1.5
+</pre>
+                    
+                      <p>Write a program that generates the following output. Ensure that your output matches the sample output exactly, including spaces.  You MUST use the variables given (e.g. you can't use the numeric literal 92 in your program - you must refer to the variable <code>score2</code>. Note that there is no user input required in this program.
+<pre>
+Grade report for: Ada Lovelace
+Individual scores: 100, 94, 88
+Average Score: 94.0
+Average Score with Class Curve: 95.5
+</pre>
+                        <p>Comment your source code and describe your code to someone who may be viewing it for the first time.  Also include your name, the date, your class section and the name of your program at the top of your file.</p>
+
+                        <p>This program should be named as follows:<br>LastNameFirstName_assign1_problem1.py (for example, "ZhaoEmily_assign1_problem1.py")</p>
+
+                      
+                        <h3>Problem #2: Using the print function</h3>
+              
+			  <p>Prompt the user to enter 3 names. Store each name in a separate variable. Then display the names back to the user in every possible order using the output below as a guide. Note the formatting in the output below - make your program match the formatting exactly. Items that are underlined indicate that the user has input those values (you don't need to replicate the underlines in your program)</p>
+			  
+			  <p>Sample input/output:</p>
+
+			  <pre>Please enter name #1: <u>Allison</u>
+Please enter name #2: <u>Jeremy</u>
+Please enter name #3: <u>Emily</u>
+
+Here are your names in every possible order:
+--------------------------------------------
+
+1. Allison, Jeremy, Emily
+
+2. **Allison** **Emily** **Jeremy**
+
+3. Jeremy-Allison-Emily
+
+4. Jeremy
+Emily
+Allison
+
+5. Emily
+   Jeremy!
+   Allison
+
+6. ---Emily
+   ------Allison
+   ---------Jeremy</pre>
+
+   <p>Comment your source code and describe your code to someone who may be viewing it for the first time.  Also include your name, the date, your class section and the name of your program at the top of your file.</p>
+			
+   <p>Note: your program should not print out the names Allison, Jeremy and Emily -- it should print out whatever names the user decides to enter. For example, if I enter Pikachu, Charmander and Squirtle the output would change to reflect these names.</p>
+   
+   <p>Hint: Make sure that IDLE is set up to use a fixed-width font (Courier is the font that I use in class) and that your font size is set to 14pt. On a Mac you can click on IDLE->Preferences to adjust your font size; On a PC you can click on Options->Configure IDLE</p>
+
+<p>This program should be named as follows:<br>LastNameFirstName_assign1_problem2.py (for example, "ZhaoEmily_assign1_problem2.py")</p>
+                      
+                        <h3>Problem #3: Math Expressions</h3>
+
+<p>You have recently been hired by a local bakery to design a program that simplifies the conversion of recipe measurements. To help you get started, the bakery has provided you with a list of common conversions:</p>
+
+
+1 ml = 0.202884 tsp<br>
+1 tbsp = 3 tsp<br>
+1 cup = 16 tbsp<br>
+1 pint = 2 cups<br>
+1 quart = 2 pints<br>
+1 gallon = 4 quarts<br>
+1 floz = 29.5735 ml<br><br>
+
+
+<p>Using the conversions above, design a program that converts 250 milliliters into US Fluid Volume units. Here's a sample running of your program - ensure that your output matches the output below (i.e. your items should line up in columns just like the output displayed below). Do not worry about decimal point precision for this program (no numeric formatting required)</p>
+
+<p>No user input is required for this program.</p>
+
+<p>Hint: Make sure that IDLE is set up to use a fixed-width font (Courier is the font that I use in class) and that your font size is set to 14pt.  On a Mac you can click on IDLE->Preferences to adjust your font size; On a PC you can click on Options->Configure IDLE</p>
+
+<pre>--------------------------------------------------------------
+		mL to US Fluid Volume Units
+--------------------------------------------------------------
+	mL:		250.0
+	tsp:		50.721000000000004
+	tbsp:		16.907
+	cup(s):		1.0566875
+	pint(s):	0.52834375
+	quart(s):	0.264171875
+	gallon(s):	0.06604296875
+	fl oz:		8.453514125822105
+--------------------------------------------------------------</pre>
+
+
+<p>Comment your source code and describe your code to someone who may be viewing it for the first time.  Also include your name, the date, your class section and the name of your program at the top of your file.</p>
+<p>This program should be named as follows:<br>LastNameFirstName_assign1_problem3.py (for example, "ZhaoEmily_assign1_problem3.py")</p>
+                      
+
+            
+        </div>
