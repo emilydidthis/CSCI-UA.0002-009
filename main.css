@@ -56,6 +56,12 @@ pre {
     border-radius: 2px;
 }
 
+.table {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    background-color: white;
+}
+
 code {
     background-color: rgb(244, 244, 244);
     padding: 2px;

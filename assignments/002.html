@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="../index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="../schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="../assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class="section assignment-page">
+                <h2>Assignment #2</h2>
+
+                <p>For this assignment you will be writing 3 programs which should be saved independently as their own ".py" file. The filename you should use for each program is outlined in the sections below.  When you're finished you should submit your programs to the Assignment #2 category inside of NYU Classes.</p>
+                <p>You may work by yourself or with a partner. If you choose to work with someone else please be sure to give them credit in your source code and on NYU classes when you submit your work. Each member of a team must submit their own copy of the assignment to get credit for the assignment.</p>
+            
+                
+                    <h3>Problem #1: Grade Calculator</h3>
+                    <p>Your grade breakdown for the class is as follows:</p>
+                        <li>Assignments: 30%</li>
+                        <li>Weekly Quizzes: 5%</li>
+                        <li>Midterm Exam: 30%</li>
+                        <li>Final Exam: 35% </li>
+                    <Br>
+                    
+                    <p>Your final grade for the class will be assigned with the following ranges:</p>
+
+<pre class="table">
+A	        93-100
+A-	        90-92.9
+B+	        87-89.9
+B	        83-86.9
+B-	        80-82.9
+C+	        77-79.9
+C	        73-76.9
+C-	        70-72.9
+D+	        67-69.9
+D	        63-66.9
+F	        less than 63
+</pre>
+                    
+                    <p>Write a program that calculates the minimum score you need to receive on the final exam to receive each corresponding final letter grade. Ensure that your output matches the sample output as closely as possible.</p>
+<pre>
+Enter overall assignments grade: 87.4
+Enter overall quiz grade: 96.5
+Enter midterm grade: 82.7
+
+Here are the scores you need to receive on the final
+to receive the following letter grades:
+--------------------------------------------
+A	        106.13%
+A-	        97.56%
+B+	        88.99%
+B	        77.56%
+B-	        68.99%
+C+	        60.41%
+C	        48.99%
+C-	        40.41%
+D+	        31.84%
+D	        20.41%
+F	        20.12% 
+</pre>
+                    <p>Comment your source code and describe your code to someone who may be viewing it for the first time.  Also include your name, the date, your class section and the name of your program at the top of your file.</p>
+
+                    <p>This program should be named as follows:<br>LastNameFirstName_assign1_problem1.py (for example, "ZhaoEmily_assign2_problem1.py")</p>
+
+                      
+                    <h3>Problem #2: Compound Interest</h3>
+                    <p>When you invest money in a savings account your money earns a certain amount of interest over a period of time. For example, investing $100 in an account that yields 1% interest annually would mean that after 1 year your account would be worth $101.</p>
+                    <p>If you left this money in your account you would earn additional interest in the following year due to the fact that your account now has $101 instead of the initial deposit of $100. You would earn interest on the initial deposit plus the $1 you earned in interest - this is called &quot;compund interest.&quot;</p>
+                    <p>For this problem you will be writing a program that calculates how much a person can earn by investing in a high yield savings account. The program should ask the user for an initial deposit amount and an interest rate. The program will then generate a 3 month projection that illustrates how much money the user can expect to earn. Assume that interest is compunded monthly (i.e. if your account earns a rate of 12% interest annually then you would earn a rate of 1% per month). Here's a sample running of the program:</p>
+                    
+<pre>This program will project how much you can earn 
+by investing money in a high-yield savings account
+over a 3 month period.
+
+To begin, enter how much money you would like to 
+initially invest (i.e. 500): <strong><u>500</u></strong>
+Next, enter your projected annual interest rate. 
+For example, enter 5 for 5%: <strong><u>5</u></strong>
+
+------- Calculating --------
+
+Month Starting Balance     Interest   Ending Balance      
+1     500.00               2.08       502.08              
+2     502.08               2.09       504.17              
+3     504.17               2.10       506.27</pre>
+      
+                    <p>And here's another sample running:</p>
+                    
+<pre>This program will project how much you can earn 
+by investing money in a high-yield savings account
+over a 3 month period.
+
+To begin, enter how much money you would like to 
+initially invest (i.e. 500): <strong><u>10000</u></strong>
+Next, enter your projected annual interest rate. 
+For example, enter 5 for 5%: <strong><u>5</u></strong>
+
+------- Calculating --------
+
+Month Starting Balance     Interest   Ending Balance      
+1     10,000.00            41.67      10,041.67           
+2     10,041.67            41.84      10,083.51           
+3     10,083.51            42.01      10,125.52</pre>
+      
+                    <p>You can assume that the user will enter reasonable input values (i.e. all inputted values will be valid positive floating point numbers.)  Ensure that your program is formatted correctly so that your values line up as in the sample output above (hint: use the format() function.)</p>
+                    
+                    <p>Note that you may run into a rounding issue if you perform your calculations on numbers that may contain a floating point inaccuracy.  It's recommended that you use the <code>round</code> function to round your floating point values to 2 decimal places before using them in a math expression. The <code>round</code> function can be used as follows:</p>
+                    
+                    <pre># round value to 2 decimal places and return a float
+value_rounded = round(value, 2)</pre>
+                                  
+      <p>Comment your source code and describe your code to someone who may be viewing it for the first time.  Also include your name, the date, your class section and the name of your program at the top of your file.</p>
+      
+      <p>This program should be named as follows:<br>LastNameFirstName_assign2_problem2.py (for example, "ZhaoEmily_assign2_problem2.py")</p>
+      <p>If you shared any code or helped out a group member with this project please be sure to give credit to that person by including their names in the commented header of your program.</p>
+	
+      <h3>Problem #3: Sum of Place Values</h3>
+
+              <p>Write a program that prompts the user to enter two numbers.  These numbers will always be >= 0 and <= 999.  You can assume that the user will always supply you with a integers within this range.  Next, compute the sum of the digits represented in each place value in that number. For example, if the numbers supplied are <strong>123</strong> and <strong>456</strong> you would compute the sum of the ones place (3+6), the sum of the tens place (2+5) and the sum of the hundreds place (1+4).  Here are a few sample runnings of your program (user input is underlined):</p>
+              
+              <pre>Enter a number between 0 and 999: <u>123</u>
+Enter another number between 0 and 999: <u>456</u>
+Sum of ones     = 3 + 6 = 9
+Sum of tens     = 2 + 5 = 7
+Sum of hundreds = 1 + 4 = 5</pre>
+
+			<pre>Enter a number between 0 and 999: <u>0</u>
+Enter another number between 0 and 999: <u>999</u>
+Sum of ones     = 0 + 9 = 9
+Sum of tens     = 0 + 9 = 9
+Sum of hundreds = 0 + 9 = 9</pre>
+
+			<pre>Enter a number between 0 and 999: <u>3</u>
+Enter another number between 0 and 999: <u>12</u>
+Sum of ones     = 3 + 2 = 5
+Sum of tens     = 0 + 1 = 1
+Sum of hundreds = 0 + 0 = 0</pre>
+
+			<pre>Enter a number between 0 and 999: <u>982</u>
+Enter another number between 0 and 999: <u>861</u>
+Sum of ones     = 2 + 1 = 3
+Sum of tens     = 8 + 6 = 14
+Sum of hundreds = 9 + 8 = 17</pre>
+	 
+	 		<p>Hint: Think about how you isolate the "ones" digit - is there a math operation that you can use to extract this information?  Huge hint: what happens when you divide the number by 10?  Does that give you any usable information?  How about the remainder of this division operation?</p>
+	 		
+	 		<p>Hint: Once you isolate the "ones" digit you then need to move on to the "tens" digit.  One way to do this would be to "throw away" the ones digit so you can focus your attention on the "tens" digit.  Is there a way you can do this using a math operation?</p>
+	 		              
+<p>Comment your source code and describe your code to someone who may be viewing it for the first time.  Also include your name, the date, your class section and the name of your program at the top of your file.</p>
+
+<p>This program should be named as follows:<br>LastNameFirstName_assign2_problem3.py (for example, "ZhaoEmily_assign2_problem3.py")</p>
+<p>If you shared any code or helped out a group member with this project please be sure to give credit to that person by including their names in the commented header of your program.</p>
+              
+            
+        </div>
