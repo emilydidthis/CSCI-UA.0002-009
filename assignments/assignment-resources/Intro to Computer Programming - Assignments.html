@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://127.0.0.1:5500/assignments/003.html#prob-3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./Intro to Computer Programming - Assignments_files/main.css">
+        <link rel="icon" type="image/ico" href="http://127.0.0.1:5500/images/favicon.ico">
+    <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></head>
+    <body data-new-gr-c-s-check-loaded="14.1047.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="http://127.0.0.1:5500/index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="http://127.0.0.1:5500/schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="http://127.0.0.1:5500/assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class=" assignment-page">
+                <h2>Assignment #3</h2>
+                <p>For this assignment you will be writing 3 programs which should be saved independently as their own ".py" file. The filename you should use for each program is outlined in the sections below.  When you're finished you should submit your programs to the Assignment #3 category inside of NYU Classes.</p>
+
+                <a href="http://127.0.0.1:5500/assignments/003.html#prob-1">Problem 1 | </a>
+                <a href="http://127.0.0.1:5500/assignments/003.html#prob-2">Problem 2 | </a>
+                <a href="http://127.0.0.1:5500/assignments/003.html#prob-3">Problem 3</a>
+                
+                <br><br>
+                <h3 id="prob-1">Problem #1: Valid Triangle Tester</h3>
+			
+			<ul>
+				<li>Prompt the user to enter in 3 points on a standard Cartesian coordinate plane. You can assume the user will enter these values as floating point numbers.</li>
+				<li>Compute the distance between each points - you will be computing 3 distance values. Use the
+distance formula to do this: ( (x1-x2)<sup>2</sup> + (y1-y2)<sup>2</sup> ) <sup>0.5</sup> ... note that you can raise a value to the 0.5
+power to compute the square root, or you can use the sqrt() function in the math module - your choice!</li>
+				<li>Report the distance to the user of each side, rounded to 2 decimal places</li>
+				<li>Next, determine if the three points could form a valid triangle. You can assume that the triangle
+is valid by checking the following.  <strong>Note that ALL THREE of these conditions must be met in order for a triangle to be valid</strong>):
+<pre>(a) Side 1 + Side 2 must be longer than Side 3
+(b) Side 2 + Side 3 must be longer than Side 1
+(c) Side 3 + Side 1 must be longer than Side 2</pre></li>
+				<li>If the triangle is valid, report whether it is an equilateral, isosceles, or scalene triangle:
+					<ul>
+						<li>Equilateral Triangle:  all sides of the triangle have the same length</li>
+						<li>Isosceles Triangle: only two sides of the triangle have the same length</li>
+						<li>Scalene Triangle: all sides of the triangle have different lengths</li></ul>
+					Hint: when comparing the size of each triangle it may be helpful to compare a "rounded" or "formatted" version of the length of each side.  Due to floating point inaccuracies you may run into a where two values are virtually identical but Python will evaluate them to be different (i.e. <code>0.000000001 != 0.0</code>)
+				</li>
+                <br>
+				<li><strong>Extra Credit:</strong> Also report if the triangle is a right triangle (i.e. it has one angle of 90 degrees).  You can do this by using the Pythagorean Theorem on the sides of the triangle - <span>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></span>. 
+				<ul>
+					<li>Hint: "c" (the hypotenuse) MUST be the largest side for the Pythagorean Theorem to work.  Use an "if" statement to find the largest side and then test to see if the theorem holds.</li>
+					<li>Hint #2: round your numbers to 0 decimal points for the purpose of this calculation. For example, round(a<sup>2</sup>) + round(b<sup>2</sup>) == round(c<sup>2</sup>)</li>
+				</ul>
+				</li>
+				<li>Here are some sample runnings of the program, as well as a diagram that will help you to visualize the
+problem (user input is underlined):
+
+					<div style="width: 500px; height: 361px; margin-top: 25px; margin-bottom: 25px; text-align: center;">
+						<img src="./Intro to Computer Programming - Assignments_files/triangle_problem.png" style="width: 100%; height: 100%;"><br>
+						Valid and Invalid Triangles
+				  </div>
+					<br>
+
+<strong>Run #1</strong>
+<pre>Valid Triangle Tester
+
+Enter Point #1 - x position: <u>0</u>
+Enter Point #1 - y position: <u>0</u>
+Enter Point #2 - x position: <u>50</u>
+Enter Point #2 - y position: <u>86.6</u>
+Enter Point #3 - x position: <u>100</u>
+Enter Point #3 - y position: <u>0</u>
+
+The length of each side of your test shape is: 
+
+Side 1: 100.00
+Side 2: 100.00
+Side 3: 100.00
+
+This is a valid triangle!
+This is an equilateral triangle</pre>
+
+<strong>Run #2</strong>
+<pre>Valid Triangle Tester
+
+Enter Point #1 - x position: <u>0</u>
+Enter Point #1 - y position: <u>0</u>
+Enter Point #2 - x position: <u>0</u>
+Enter Point #2 - y position: <u>100</u>
+Enter Point #3 - x position: <u>100</u>
+Enter Point #3 - y position: <u>0</u>
+
+The length of each side of your test shape is: 
+
+Side 1: 100.00
+Side 2: 100.00
+Side 3: 141.42
+
+This is a valid triangle!
+This is an isosceles triangle.
+This is also a right triangle.</pre>
+
+
+<strong>Run #3</strong>
+<pre>Valid Triangle Tester
+Enter Point #1 - x position: <u>110</u>
+Enter Point #1 - y position: <u>100</u>
+Enter Point #2 - x position: <u>75</u>
+Enter Point #2 - y position: <u>25</u>
+Enter Point #3 - x position: <u>0</u>
+Enter Point #3 - y position: <u>0</u>
+
+The length of each side of your test shape is: 
+
+Side 1: 82.76
+Side 2: 148.66
+Side 3: 79.06
+
+This is a valid triangle!
+This is a scalene triangle</pre>
+
+<strong>Run #4</strong>
+<pre>Valid Triangle Tester
+Enter Point #1 - x position: <u>0</u>
+Enter Point #1 - y position: <u>0</u>
+Enter Point #2 - x position: <u>50</u>
+Enter Point #2 - y position: <u>50</u>
+Enter Point #3 - x position: <u>100</u>
+Enter Point #3 - y position: <u>100</u>
+
+The length of each side of your test shape is: 
+
+Side 1: 70.71
+Side 2: 141.42
+Side 3: 70.71
+
+This is not a valid triangle</pre></li>
+
+<li>Comment your source code and describe your code to someone who may be viewing it for the first
+time. Also include your name, the date, your class section and the name of your program at the top of
+your file.</li>
+				<li><strong>Extra Credit</strong>:  draw your triangle using Turtle Graphics.  Triangles should use the following pen colors based on their type:<ul>
+						<li>Scalene:  Red</li>
+						<li>Isosceles:   Blue</li>
+						<li>Equilateral:  Green</li>
+					</ul>
+				</li>
+
+</ul>
+<p>This program should be named as follows:
+LastNameFirstName_assign3_problem1.py (for example, "ZhaoEmily_assign3_problem1.py")</p>
+
+<h3 id="prob-2">Problem #2: Guess the Number Game with 3 Attempts</h3>
+
+<p>Write a program that lets the user guess an integer between 1 and 10. The integer should be randomly selected by your program when it starts up. Your player is allowed to guess three times - if they guess correctly, they win and the program ends. If they guess incorrectly they should be told if the number they guessed was too high or too low and then be asked to guess another time. At the end of the program you should display the secret number as well as how many attempts it took to guess that number.</p>
+<p>Note: This program does not require a "while" loop -- if you have gone ahead and looked at Module #4 that's fantastic, but you are not allowed to write this program using this technique.  Also, you are not allowed to use the "sys.exit()" function (or any other similar function) to cause your program to prematurely quit. Everything being asked of you can be done using "if", "elif" and "else" statements.</p>
+
+<p> Here are a few sample runnings of your program (underlined text indicates user input):</p>
+
+<strong>Run #1</strong>
+<pre>I'm thinking of a number between 1 and 10!
+What's your guess? <u>5</u>
+You got it!
+The secret number was 5.
+It took you 1 try to guess the number.</pre>
+
+<strong>Run #2</strong>
+<pre>I'm thinking of a number between 1 and 10!
+What's your guess? <u>5</u>
+Too low, try again.
+What's your guess? <u>8</u>
+Too high try again.
+What's your guess? <u>7</u>
+You got it!
+The secret number was 7.
+It took you 3 tries to guess the number.</pre>
+	
+<strong>Run #3</strong>
+<pre>I'm thinking of a number between 1 and 10!
+What's your guess? <u>5</u>
+Too high, try again.
+What's your guess? <u>1</u>
+Too low, try again.
+What's your guess? <u>3</u>
+The secret number was 4.
+You didn't guess the number.</pre>
+	
+<p>This program should be named as follows:
+LastNameFirstName_assign3_problem2.py (for example, "ZhaoEmily_assign3_problem2.py")</p>
+
+
+<h3 id="prob-3">Problem #3: Is there class today?</h3>
+
+              <div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+
+	<p>For this assignment you will be writing a "diagnostic" program that will be able to tell a user whether s/he has our class on any given day during the current semester (Fall 2020). The program should begin by asking the user to supply a date in the following format:  <code>YYYYMMDD</code>  For example, <code>20200218</code> would be interpreted as "February 18th, 2020".  You can always assume that the user will supply an 8 digit integer. Next, the program should "diagnose" the date as one of the following:</p>
+	
+	<ul>
+		<li>The date is invalid (i.e. <code>20205701</code> is invalid because there is no 57th month of the year, <code>20010931</code> is invalid because there are not 30 days in the month of September).  Note that for the purpose of the basic version of the program February will always have 28 days</li>
+		<li>The date is before the beginning of the semester (before September 2nd, 2020)</li>
+		<li>The date is after the end of the semester (after December 21st, 2020)</li>
+		<li>The date is during the semester AND is one of the days that we have class (see our class schedule to the left for a complete list of days)</li>
+		<li>The date is during the semester AND Is NOT one of the days that we have class</li>
+	</ul>
+	
+	<p>Here are a few sample runnings of the program using the schedule for the Tuesday section of the class (underlined text indicates user input):</p>
+	
+	<pre>Enter a date in YYYYMMDD format (i.e. 20200128 for January 28th, 2020): <u>20200128</u>
+This date is before the semester begins</pre>
+
+	<pre>Enter a date in YYYYMMDD format (i.e. 20200128 for January 28th, 2020): <u>20200931</u>
+That's not a valid date!</pre>
+
+	<pre>Enter a date in YYYYMMDD format (i.e. 20200128 for January 28th, 2020): <u>20200930</u>
+You have class today.</pre>
+
+	<pre>Enter a date in YYYYMMDD format (i.e. 20200128 for January 28th, 2020): <u>20201230</u>
+This date is after the semester ends</pre>
+
+	<pre>Enter a date in YYYYMMDD format (i.e. 20200128 for January 28th, 2020): <u>20201031</u>
+You do not have class today</pre>
+
+	<pre>Enter a date in YYYYMMDD format (i.e. 20200128 for January 28th, 2020): <u>20180230</u>
+That's not a valid date!</pre>
+	
+	<p>Hints:</p>
+
+	<ul>
+		<li>Your program can assume that the user will type in an integer. You should convert all values given to you by the user into integers for calculation purposes.</li>
+		<li>Look back at Assignment #2 if you are having trouble isolating the year, month and day from the single integer that the user is providing.</li>
+		<li>There are many different conditions to test in this program, and many different ways to approach the problem.  My advice is to pick one criteria (i.e. invalid dates) and start there -- once you've identified the supplied value as invalid you don't need to continue analyzing it.</li>
+		<li>You cannot assume that if your program works with the sample inputs above that it is complete - you will need to design a series of "tests" to make sure your program works under all circumstances.</li>
+	</ul>
+	
+	<p><strong>Extra Credit</strong>: implement your program so that it supports "leap years".  A "leap year" is a year in which February has 29 days instead of 28 - it can be computed as follows:
+	
+		</p><blockquote>In the Gregorian calendar three criteria must be taken into account to identify leap years: The year can be evenly divided by 4; If the year can be evenly divided by 100, it is NOT a leap year, unless; The year is also evenly divisible by 400</blockquote>
+	<p></p>
+		
+
+<p>This program should be named as follows:
+LastNameFirstName_assign3_problem3.py (for example, "ZhaoEmily_assign3_problem3.py")</p>
+
+</div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -54,7 +54,6 @@ pre {
     padding: 10px;
     margin: 20px 0px;
     border-radius: 2px;
-    white-space: pre-wrap;   
 }
 
 .table {
@@ -115,7 +114,6 @@ nav a {
 
 .assignment-page ul {
     border-left: 0px;
-    padding-left: 20px;
 }
 .section ol {
     margin-left: 20px;
