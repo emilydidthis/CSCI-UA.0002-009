@@ -13,38 +13,43 @@ side2 = round(pow(pow(x3-x1, 2) + pow(y3-y1, 2), 0.5), 2)
 side3 = round(pow(pow(x2-x3, 2) + pow(y2-y3, 2), 0.5), 2)
 
 # ouput
-print(format(side1, ".2f"))
-print(format(side2, ".2f"))
-print(format(side3, ".2f"))
+print()
+print("The length of each side of your shape is:")
+print()
+print("Side 1:", format(side1, ".2f"))
+print("Side 2:", format(side2, ".2f"))
+print("Side 3:", format(side3, ".2f"))
+print()
 
 # check valid triangle
 if side1 + side2 > side3 and side2 + side3 > side1 and side3 + side1 > side2:
     print("This is a valid triangle!")
+    #report equilateral, isosceles, or scalene
+    if side1 == side2 == side3:
+        print("This is an equilateral triangle")
+    elif side1 == side2 or side2 == side3 or side3 == side1:
+        print("This is an isosceles triangle.")
+    else:
+        print("This is a scalene triangle.")
+
+    # EC: check if right triangle
+    if side1 > side2 and side1 > side3:
+        c = side1
+        a = side2
+        b = side3
+    elif side2 > side1 and side2 > side3:
+        c = side2
+        a = side1
+        b = side3
+    else:
+        c = side3
+        a = side1
+        b = side2
+    if round(pow(a,2)) + round(pow(b,2)) == round(pow(c,2)):
+        print("This is also a right triangle")
+
 else:
     print("This is not a valid triangle")
 
 
-#check equilateral triangle
-if side1 == side2 == side3:
-    print("This is an equilateral triangle")
-elif side1 == side2 or side2 == side3 or side3 == side1:
-    print("This is an isosceles triangle")
-else:
-    print("This is a scalene triangle")
 
-# EC: check if right triangle
-if side1 > side2 and side1 > side3:
-    c = side1
-    a = side2
-    b = side3
-elif side2 > side1 and side2 > side3:
-    c = side2
-    a = side1
-    b = side3
-else:
-    c = side3
-    a = side1
-    b = side2
-
-if round(pow(a,2)) + round(pow(b,2)) == round(pow(c,2)):
-    print("This is also a right triangle")
