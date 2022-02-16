@@ -3,7 +3,7 @@
 date = int(input('Enter a date in YYYYMMDD format (i.e. 20220101 for January 1st, 2022): '))
 day = date % 100
 month = (date//100) % 100
-valid = False
+valid = True
 
 # check month validity
 if month > 12 or month < 0:
@@ -57,6 +57,11 @@ if valid:
             print('You have class today.')
         else:
             print('You do not have class today.')
+    if month == 5:
+        if day == 2 or day == 4 or day == 9:
+            print("You have class today.")
+        else:
+            print("You do not have class today.")
 
 
 
