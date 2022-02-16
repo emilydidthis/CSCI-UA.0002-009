@@ -7,5 +7,3 @@ mc_value = float(input("Value of Metrocard: "))
 rides_left = mc_value // 2.75
 print("Rides left:", int(rides_left))
 
-
-

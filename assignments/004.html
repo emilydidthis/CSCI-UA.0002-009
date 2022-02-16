@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="../index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="../schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="../assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class=" assignment-page">
+                <h2>Assignment #4</h2>
+                <p>For this assignment you will be writing 4 programs which should be saved independently as their own ".py" file. The filename you should use for each program is outlined in the sections below. When you're finished you should submit your programs to the Assignment #4 category inside of NYU Classes.</p>
+
+                <a href="#prob-1">Problem 1 | </a>
+                <a href="#prob-2">Problem 2 | </a>
+                <a href="#prob-3">Problem 3</a>
+                <br><br>
+                <h3 id="prob-1">Problem 1: Star Drawer</h3>
+                <br>
+                <p><strong>Part 1</strong></p>
+                <p>Write a program that prompts the user for two numbers.  You can always assume the user will supply integers when prompted, but you cannot assume the range of these integers.  Ensure that both integers are positive, and that the second integer is larger than the first.  For example:</p>
+                  
+<pre>Number 1: <u>-5</u>
+Invalid, try again
+Number 1: <u>5</u>
+Number 2: <u>-5</u>
+Invalid, try again
+Number 2: <u>4</u>
+Invalid, try again
+Number 2: <u>6</u></pre>
+                  
+                <p><strong>Part 2</strong></p>
+                  
+                  <p>Next, generate a triangle pattern that looks like the following.  Note that the first line you should print should contain the first number the user supplied, followed by that many stars.  The next line should increase by 1 and repeat the process until you reach the second number.</p>
+                  
+<pre>Number 1: <u>1</u>
+Number 2: <u>9</u>
+1 *
+2 **
+3 ***
+4 ****
+5 *****
+6 ******
+7 *******
+8 ********
+9 *********</pre>
+  
+                  <p><strong>Part 3</strong></p>
+                  
+                  <p>Generate the bottom half of the triangle so that it looks like an "arrow".  For this part of the shape the numbers should decrease and return back to the first number.  Here are a few runnings of your program - user input is underlined:</p>
+  
+  
+<pre>Number 1: <u>1</u>
+Number 2: <u>9</u>
+1 *
+2 **
+3 ***
+4 ****
+5 *****
+6 ******
+7 *******
+8 ********
+9 *********
+8 ********
+7 *******
+6 ******
+5 *****
+4 ****
+3 ***
+2 **
+1 *</pre>
+  
+<pre>Number 1: <u>-10</u>
+Invalid, try again
+Number 1: <u>-20</u>
+Invalid, try again
+Number 1: <u>5</u>
+Number 2: <u>-5</u>
+Invalid, try again
+Number 2: <u>3</u>
+Invalid, try again
+Number 2: <u>4</u>
+Invalid, try again
+Number 2: <u>5</u>
+Invalid, try again
+Number 2: <u>20</u>
+5 *****
+6 ******
+7 *******
+8 ********
+9 *********
+10 **********
+11 ***********
+12 ************
+13 *************
+14 **************
+15 ***************
+16 ****************
+17 *****************
+18 ******************
+19 *******************
+20 ********************
+19 *******************
+18 ******************
+17 *****************
+16 ****************
+15 ***************
+14 **************
+13 *************
+12 ************
+11 ***********
+10 **********
+9 *********
+8 ********
+7 *******
+6 ******
+5 *****</pre>
+            <p>This program should be named as follows:
+            LastNameFirstName_assign4_problem1.py (for example, "ZhaoEmily_assign4_problem1.py&quot;)</p>  
+          
+              <h3 id="prob-2">Problem 2: Roll the Dice</h3>
+  
+              
+  <p>In games with two dice (such as Monopoly), rolling two 6-sided dice and getting the same side or number on
+                both dice is called &quot;doubles&quot; (i.e. the first die rolls a 5 and the second die rolls a 5 at the same time). One special type of
+  &quot;doubles&quot; roll is called &quot;snake eyes,&quot; which is rolling two 1's at the same time.</p>
+  
+              <p>The most common size of dice used in games today is the 6-sided dice, but there are plenty of other sizes available.  For example, popular role-playing games such as Dungeons and Dragons use dice with a variety of sizes, such as 4, 12 and 20 sided dice.</p>
+  
+              <div id="imgbox">
+                  <img src="assignment-resources/dice.jpeg" style="display: block; margin: auto;">
+                  <p style="text-align: center;"><em>Some multi-sided dice</em></p>
+              </div>			
+              
+  <p>For this assignment you will be writing a program which first prompts the user for the number of sides to the
+  dice they will be rolling. Your user should be limited to selecting dice with the following number of sides:</p>
+ 
+  <ul>
+      <li>4 sides</li>
+      <li>6 sides</li>
+      <li>8 sides</li>
+      <li>10 sides</li>
+      <li>12 sides</li>
+      <li>20 sides</li>
+  </ul>
+  <br>
+  <p>You can assume that that your user will enter integers when prompted. You will need to validate their input before you continue (i.e. entering -10 should cause your program to tell the user that their input is
+  invalid). You should re-prompt the user to enter a value if they supply bad data. Hint: use a "while" loop to keep the user "trapped" until they supply you with "good" data.</p>
+  
+  
+  
+              <p>Next, your program should keep &quot;rolling the dice&quot; until the program generates a &quot;snake eyes&quot; roll (1 and 1). This means that you will
+  roll two virtual dice of the specified size at a time. The program should &quot;announce&quot; every pair rolled and tell the user if the roll qualifies as one of the following:
+  <ul>
+      <li>A double roll (i.e. [2 and 2], [4 and 4], [6 and 6])</li>
+      <li>A high roll (i.e. on a six sided die, [6 and 6])</li>
+      <li>A high/low roll (i.e. on a six sided die, [1 and 6] or [6 and 1])</li>
+      <li>An even roll (i.e. both die values are even: [2 and 2], [4 and 4])</li>
+      <li>An odd roll (i.e. both die values are odd: [3 and 3], [5 and 5])</li>
+      <li>A sum value (i.e. adding both die values together equals the size of the current die)</li>
+      <li>Snake Eyes (1 and 1) - this should end the rolling portion of the program</li>
+  </ul>
+  <br>
+  
+        <p>At the end of the game you will want to calculate the average roll for each die and present this information to the user. See the sample program below to see what this should look like. You should format this number to twodecimal places. Here's a sample running of the program (user input is underlined for your reference -  you do not need to code your program to generate underlines):</p>
+  
+<pre>
+How many sides on your dice (4, 6, 8, 10, 12 or 20)? <u>13</u>
+Invalid size, try again.
+How many sides on your dice (4, 6, 8, 10, 12 or 20)? <u>2</u>
+Invalid size, try again.
+How many sides on your dice (4, 6, 8, 10, 12 or 20)? <u>-1</u>
+Invalid size, try again.
+How many sides on your dice (4, 6, 8, 10, 12 or 20)? <u>6</u>
+
+Thanks, here we go!
+
+1. die #1 is *3* and die #2 is *2* 
+2. die #1 is *1* and die #2 is *5* Odds! Sum value is size value! 
+3. die #1 is *3* and die #2 is *5* Odds! 
+4. die #1 is *3* and die #2 is *3* Odds! Doubles! Sum value is size value! 
+5. die #1 is *1* and die #2 is *2* 
+6. die #1 is *4* and die #2 is *2* Evens! Sum value is size value! 
+7. die #1 is *5* and die #2 is *1* Odds! Sum value is size value! 
+8. die #1 is *5* and die #2 is *5* Odds! Doubles! 
+9. die #1 is *4* and die #2 is *3* 
+10. die #1 is *3* and die #2 is *2* 
+11. die #1 is *6* and die #2 is *5* 
+12. die #1 is *4* and die #2 is *1* 
+13. die #1 is *4* and die #2 is *1* 
+14. die #1 is *2* and die #2 is *5* 
+15. die #1 is *2* and die #2 is *4* Evens! Sum value is size value! 
+16. die #1 is *6* and die #2 is *1* High / Low! 
+17. die #1 is *6* and die #2 is *5* 
+18. die #1 is *1* and die #2 is *2* 
+19. die #1 is *6* and die #2 is *3* 
+20. die #1 is *3* and die #2 is *6* 
+21. die #1 is *1* and die #2 is *2* 
+22. die #1 is *1* and die #2 is *1* Odds! Doubles! Snake Eyes!
+
+You finally got snake eyes on roll # 22
+Along the way you rolled DOUBLES 3 times. (13.64% of all rolls were doubles)
+Along the way you rolled TWO HIGH VALUES 0 times (0.00% of all rolls were two high values)
+Along the way you rolled TWO EVENS 2 times. (9.09% of all rolls were two evens)
+Along the way you rolled TWO ODDS 6 times. (27.27% of all rolls were two odds)
+Along the way you rolled HIGH / LOW 1 times. (4.55% of all rolls were high/low)
+Along the way you rolled A SUM VALUE 5 times. (22.73% of all rolls were a sum value)
+Average roll for die #1: 3.36
+Average roll for die #2: 3.00</pre>
+  
+  <p>Note that the &quot;snake eyes&quot; roll that causes your loop to end should also count as a &quot;doubles&quot; roll.</p>
+  
+  
+  <p>This program should be named as follows:
+  LastNameFirstName_assign4_problem2.py (for example, "ZhaoEmily_assign4_problem2)</p>
+  
+  
+  
+              <br style="page-break-after: always;">
+              
+              <h3 id="prob-3">Problem 3: Pick Up Sticks</h3>
+  
+                <div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+  
+              <p>For this assignment you will be creating an interface for two humans to play a simple game of "Pick Up Sticks". Here's how the game is played in the "real world":</p>
+              
+              <ul>
+                  <li>The game begins with a number of sticks on a table (between 10 and 100)</li>
+                  <li>Each player, in turn, takes between 1-3 sticks off the table.</li>
+                  <li>The player to take the last stick loses.</li>
+              </ul>
+              
+              <p>Your job is to build a virtual version of the game using Python.  The program is broken into a series of parts to help you understand how to put together a game with many different components. Each part builds on the previous one, so you should complete them in order and turn in your the final part as your solution.</p>
+              <p><strong>Part 1: Single Player Game</strong></p>
+              <p>Begin by asking the user for a number of sticks to be used in the game. Only accept numbers between 10 and 100 - if the user supplies a number outside of this range you should re-prompt them.</p>
+              <p>Next, continually announce to the user how many sticks are on the table and ask the user to enter in a number of sticks to take away. Only accept choices of 1,2 or 3 sticks - anything else should cause an error message to be displayed. Once a valid number of sticks has been entered you should deduct that # of sticks from the total number of sticks in the game. When you reach 0 sticks left the game is over.</p>
+              <p>Here is a sample running of the program:</p>
+            <pre>How many sticks (10-100)? <u>999</u><br>Sorry, that's too many sticks. Try again
+How many sticks (10-100)? <u>-10</u><br>Sorry, that's too few sticks. Try again.
+How many sticks (10-100)? <u>10</u>
+Great Let's play ...
+
+There are 10 sticks on the table.
+How many sticks do you want to take (1, 2 or 3)? <u>999</u>
+Sorry, that's not a valid number.
+
+There are 10 sticks on the table.
+How many sticks do you want to take (1, 2 or 3)? <u>0</u>
+Sorry, that's not a valid number.
+
+There are 10 sticks on the table.
+How many sticks do you want to take (1, 2 or 3)? <u>3</u>
+
+There are 7 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>2</u>
+
+There are 5 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>3</u>
+
+There are 2 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>3</u>
+Sorry, that would bring the total # of sticks below 0. Try again.
+
+There are 2 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>2</u>
+
+There are no sticks left on the table!  Game over.          </pre>
+              <p>You do not need to turn this part in - instead, once you are happy with it continue on to part 2. You will be turning that part in to NYU Classes.</p>
+		
+  <p><strong>Part 2: Two Player Game</strong></p>
+  <p>Note: Part 2 builds on Part 1, so make a copy of the code you wrote for Part 1 to get started.</p>
+  <p>As you can see, the single player version of this game isn't very fun. To make things more interesting we are now going to add in an element of competition. For this part you will be implementing a two player game where players take turns taking sticks from the table. The same rules apply - each player can only take 1, 2 or 3 sticks per turn. The player who takes the last stick off of the table is the loser.</p>
+  <p>Here's a sample running of the game:</p>
+<pre>How many sticks (10-100)? <u>999</u><br>Sorry, that's too many sticks. Try again
+How many sticks (10-100)? <u>10</u>
+Great Let's play ...
+
+Turn: Player 1
+There are 10 sticks on the table.
+How many sticks do you want to take (1, 2 or 3)? <u>999</u>
+Sorry, that's not a valid number.
+
+Turn: Player 1
+There are 10 sticks on the table.
+How many sticks do you want to take (1, 2 or 3)? <u>0</u>
+Sorry, that's not a valid number.
+
+Turn: Player 1
+There are 10 sticks on the table.
+How many sticks do you want to take (1, 2 or 3)? <u>3</u>
+
+Turn: Player 2
+There are 7 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>2</u>
+
+Turn: Player 1
+There are 5 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>3</u>
+
+Turn: Player 2
+There are 2 sticks on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>1</u>
+
+Turn: Player 1
+There is 1 stick on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>0</u>
+Sorry, that's not a valid number.
+
+Turn: Player 1
+There is 1 stick on the table.<br>How many sticks do you want to take (1, 2 or 3)? <u>1</u>
+
+There are no sticks left on the table!  Game over.  
+Player 2 wins!          </pre>
+
+<p>Here are some hints to get you started:</p>
+          
+          <ul>
+            <li>You may want to use a variable to keep track of the players and who's turn it is</li>
+            <li>In your game you only want to switch turns when the player takes a valid # of sticks</li>
+            <li>Do not allow players to take more than the total # of sticks on the table (i.e. if there are 2 sticks left the player should not be able to take 3 sticks)</li>
+            <li>The player who takes the last stick is the loser.</li>
+          
+          </ul>
+  
+  <br>
+  <p>This program should be named as follows:
+  LastNameFirstName_assign4_problem3.py (for example, "ZhaoEmily_assign4_problem3.py)</p>
+  
+  
+  <h3 id="prob-4"> Problem 4: Decimal to Binary</h3>
+
+  
+  <p>In Computer Science we often work with different number systems to represent data.  The most commonly used number system (which we refer to as "decimal") is a "base 10" number system, which means that we use the values 0-9 to represent all numbers.</p>
+  
+  <p>The binary number system is a "base 2" number system, which means that we use the values 0 and 1 to represent all numbers.  We refer to each value in a binary number as a "bit" (i.e. the number 0101 consists of 4 bits)</p>
+  
+  <p>You can convert a decimal number into a binary number by doing the following:</p>
+  
+  <ul>
+      <li>Attempt to divide the number by 2.</li>
+      <li>If there is a remainder you should record the bit 1.</li>
+      <li>If there is no remainder, you should record the bit 0.</li>
+      <li>Divide the number by 2 and throw away the remainder.</li>
+      <li>If the number is positive, repeat the process.</li>  
+      <li>If the number is 0, you should end the process.</li>
+  </ul>
+  <br>
+  <p>For example, consider the following decimal number: </p>
+  
+<pre>decimal = 5</pre>
+  
+  <p>Here is how the algorithm works on this number:</p>
+  
+<pre>5 ÷ 2 = 2 remainder 1                 <u>1</u>
+5 -> 2
+2 ÷ 2 = 1 remainder 0                <u>0</u>1
+2 -> 1
+1 ÷ 2 = 0 remainder 1               <u>1</u>01
+2 -> 0 (algorithm stops)</pre>
+  
+  <p>Your challenge for this assignment is to write a program that prompts the user for an integer greater than or equal to zero.  If the user supplies a value less than 0 you should re-prompt them.  Next, articulate the steps necessary to convert the number in question to binary.  </p>
+  <p>Hint: Integers do not support leading 0's (i.e. 0001 will be reduced to 1). For this program you should use a String String to hold your bits (i.e. &quot;0001&quot; is allowed). You will need to figure out a way how to add bits to your String (hint: string concatenation)</p>
+  <p>Here are a few sample runnings of your program:</p>
+  
+<pre>Enter a number greater than or equal to 0: -5
+Invalid, try again
+Enter a number greater than or equal to 0: -9
+Invalid, try again
+Enter a number greater than or equal to 0: 9
+9 % 2 = 1 --- 1
+9 / 2 = 4
+4 % 2 = 0 --- 01
+4 / 2 = 2
+2 % 2 = 0 --- 001
+2 / 2 = 1
+1 % 2 = 1 --- 1001
+1 / 2 = 0
+
+9 in binary is 1001</pre>
+  
+<pre>Enter a number greater than or equal to 0: 86
+86 % 2 = 0 --- 0
+86 / 2 = 43
+43 % 2 = 1 --- 10
+43 / 2 = 21
+21 % 2 = 1 --- 110
+21 / 2 = 10
+10 % 2 = 0 --- 0110
+10 / 2 = 5
+5 % 2 = 1 --- 10110
+5 / 2 = 2
+2 % 2 = 0 --- 010110
+2 / 2 = 1
+1 % 2 = 1 --- 1010110
+1 / 2 = 0
+
+86 in binary is 1010110</pre>
+
+<pre>Enter a number greater than or equal to 0: 255
+255 % 2 = 1 --- 1
+255 / 2 = 127
+127 % 2 = 1 --- 11
+127 / 2 = 63
+63 % 2 = 1 --- 111
+63 / 2 = 31
+31 % 2 = 1 --- 1111
+31 / 2 = 15
+15 % 2 = 1 --- 11111
+15 / 2 = 7
+7 % 2 = 1 --- 111111
+7 / 2 = 3
+3 % 2 = 1 --- 1111111
+3 / 2 = 1
+1 % 2 = 1 --- 11111111
+1 / 2 = 0
+
+255 in binary is 11111111</pre>
+  
+<pre>Enter a number greater than or equal to 0: 256
+256 % 2 = 0 --- 0
+256 / 2 = 128
+128 % 2 = 0 --- 00
+128 / 2 = 64
+64 % 2 = 0 --- 000
+64 / 2 = 32
+32 % 2 = 0 --- 0000
+32 / 2 = 16
+16 % 2 = 0 --- 00000
+16 / 2 = 8
+8 % 2 = 0 --- 000000
+8 / 2 = 4
+4 % 2 = 0 --- 0000000
+4 / 2 = 2
+2 % 2 = 0 --- 00000000
+2 / 2 = 1
+1 % 2 = 1 --- 100000000
+1 / 2 = 0
+
+256 in binary is 100000000</pre>
+  
+  <p>This program should be named as follows:
+  LastNameFirstName_assign4_problem4.py (for example, "ZhaoEmily_assign4_problem4.py&quot;)</p>
