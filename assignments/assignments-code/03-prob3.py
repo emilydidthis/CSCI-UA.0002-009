@@ -1,10 +1,18 @@
 
 # get user input YYYYMMDD format
 date = int(input('Enter a date in YYYYMMDD format (i.e. 20220101 for January 1st, 2022): '))
+year = date // 10000
 day = date % 100
 month = (date//100) % 100
 valid = True
+leap = False
 
+# check leap year
+if year % 100 == 0 and year % 400 == 0:
+    leap = False
+elif year % 4 == 0 and year % 100 != 0:
+    leap = True
+    
 # check month validity
 if month > 12 or month < 0:
     print("That's not a valid date!")
@@ -19,9 +27,14 @@ else:
             print("That's not a valid date!")
             valid = False
     else:
-        if day > 28:
-            print("That's not a valid date!")
-            valid = False
+        if leap:
+            if day > 29:
+                print("That's not a valid date!")
+                valid = False
+        else:
+            if day > 28:
+                print("That's not a valid date!")
+                valid = False
 
 #Checks that the date is within the semester
 if valid:
