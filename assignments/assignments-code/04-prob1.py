@@ -1,7 +1,3 @@
-
-
-
-
 num1_valid = False
 num2_valid = False
 
@@ -13,19 +9,20 @@ while num1_valid == False:
         num1_valid = True
         while num2_valid == False:
             num2 = int(input("Number 2: "))
-            if num2 <= 0:
+            if num2 <= num1:
                 print("Invalid, try again")
             else:
                 num2_valid = True
 
-lower = num1
+iterator = num1
 
-while num1 <= num2:
-    print(num1, "*" * num1)
-    num1 += 1
+while iterator <= num2:
+    print(iterator, "*" * iterator)
+    iterator += 1
 
-num1 -= 2
+iterator = num2
 
-while num1 >= lower:
-    print(num1, "*" * num1)
-    num1 -= 1
+while iterator >= num1:
+    iterator -= 1
+    print(iterator, "*" * iterator)
+    
