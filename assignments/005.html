@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="../index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="../schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="../assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class=" assignment-page">
+                <h2>Assignment #5</h2>
+                <p>For this assignment you will be writing 4 programs which should be saved independently as their own ".py" file. The filename you should use for each program is outlined in the sections below. When you're finished you should submit your programs to the Assignment #4 category inside of NYU Classes.</p>
+
+                <h3 id="prob1">Problem 1: Pizza Party</h3>
+
+<p>You are arranging a pizza party for all of your friends. You want to figure out how much pizza you can order without exceeding your budget. Write a program that accepts the number of people attending your party, the budget for your party, the price per slice of pizza, and the price per pie of pizza. Your program should then identify how many slices each person wants and determine how many individual slices and pies to order without exceeding your budget. If you exceed your budget, the program should warn the user they can't place their order. Note that for the purpose of this program a pizza pie contains 8 slices. And note that the restaurant you are ordering from will not sell you more than 7 individual slices at a time (if you need to purchase 8 slices you will have to buy a whole pie).</p>
+
+<p>You do not need to validate the first four input statements (total budget, cost per slice, cost per pie and # of people attending party). You do have to validate the user's input when prompting them for the number of slices for each person coming to the party (i.e. Enter number of slices for person #1).</p>
+
+<p><strong>Example input/output</strong></p>
+
+<pre>
+Enter budget for your party: <u>100</u>
+Cost per slice of pizza: <u>2.50</u>
+Cost per whole pizza pie (8 slices): <u>12.50</u>
+How many people will be attending your party? <u>10</u>
+Enter number of slices for person #1: <u>-2</u>
+Not a valid entry, try again!
+
+Enter number of slices for person #1: <u>2</u>
+Enter number of slices for person #2: <u>3</u>
+Enter number of slices for person #3: <u>4</u>
+Enter number of slices for person #4: <u>2</u>
+Enter number of slices for person #5: <u>3</u>
+Enter number of slices for person #6: <u>4</u>
+Enter number of slices for person #7: <u>2</u>
+Enter number of slices for person #8: <u>1</u>
+Enter number of slices for person #9: <u>5</u>
+Enter number of slices for person #10: <u>4</u>
+You should purchase 3 pies and 6 slices
+Your total cost will be: 52.50
+You will still have 47.50 left after your order</pre>
+
+<pre>
+Enter budget for your party: <u>10</u>
+Cost per slice of pizza: <u>2.50</u>
+Cost per whole pizza pie (8 slices): <u>12.50</u>
+How many people will be attending your party? <u>4</u>
+Enter number of slices for person #1: <u>1</u>
+Enter number of slices for person #2: <u>1</u>
+Enter number of slices for person #3: <u>1</u>
+Enter number of slices for person #4: <u>1</u>
+You should purchase 0 pies and 4 slices
+Your total cost will be: 10.00
+You will have no money left after your order.</pre>
+
+<pre>
+Enter budget for your party: <u>10</u>
+Cost per slice of pizza: <u>2.50</u>
+Cost per whole pizza pie (8 slices): <u>12.50</u>
+How many people will be attending your party? <u>4</u>
+Enter number of slices for person #1: <u>2</u>
+Enter number of slices for person #2: <u>2</u>
+Enter number of slices for person #3: <u>2</u>
+Enter number of slices for person #4: <u>2</u>
+Your order cannot be completed.
+You would need to purchase 1 pies and 0 slices
+This would put you over budget by 2.50</pre>
+
+<p>This program should be named as follows: LastNameFirstName_assign5_prob1.py 
+
+<h3 id="prob-2">Problem 2: Dynamic Gradebook</h3>
+
+
+<p>Write a gradebook program that lets a teacher keep track of test averages for his or her students. Your program should begin by asking the teacher for a number of students in their class as well as the total # of tests that will be given to the class. Validate this information to ensure that the numbers entered are positive.</p>
+
+<p>Next, prompt the teacher to enter in scores for each student. Ensure that the values entered are positive - if they aren't you will need to re-prompt them. Hint: you may need to use nested loops here! A &quot;while&quot; loop can be placed inside of a &quot;for&quot; loop, if necessary.</p>
+
+<p>Once your program has collected all test scores for a student it should display that student's average and move onto the next student. When all students have been calculated the program should compute the overall average score for the entire class.</p>
+
+<p>Here's a sample running of your program:</p>
+
+<pre>
+How many students are in your class? <u>-5</u>
+Invalid # of students, try again.
+
+How many students are in your class? <u>3</u>
+How many tests in this class? <u>-10</u>
+Invalid # of tests, try again.
+How many tests in this class? <u>2</u>
+
+Here we go!
+
+**** Student #1****
+Enter score for test #1: <u>-50</u>
+Invalid score, try again
+Enter score for test #1: <u>50</u>
+Enter score for test #2: <u>75</u>
+Average score for student #1 is 62.50
+
+**** Student #2****
+Enter score for test #1: <u>100</u>
+Enter score for test #2: <u>90</u>
+Average score for student #2 is 95.00
+
+**** Student #3****
+Enter score for test #1: <u>-10</u>
+Invalid score, try again
+Enter score for test #1: <u>-20</u>
+Invalid score, try again
+Enter score for test #1: <u>-30</u>
+Invalid score, try again
+Enter score for test #1: <u>90</u>
+Enter score for test #2: <u>80</u>
+Average score for student #3 is 85.00
+
+Average score for all students is: 80.83</pre>
+
+<p>Some hints:</p>
+
+<ul>
+	<li>Begin by constructing a &quot;for&quot; loop to iterate over all students in the class</li>
+	<li>Once you're inside of this &quot;for&quot; loop you will probably need another loop to handle inputting the scores for a particular student.</li>
+	<li>Big hint: Try to get your program to work first without any data validation. You can add this in later once you figure out the general structure of the program.</li>
+	<li>Remember the difference between &quot;for&quot; and &quot;while&quot; loops! &quot;for&quot; loops are used when you want to iterate over a know # of items, and &quot;while&quot; loops can be used to keep the user &quot;caught&quot; indefinately until they fulfill a particular condition. You will probably need to use a combination of these loops to solve this problem.</li>
+</ul>
+
+<p><br>This program should be named as follows: LastNameFirstName_assign5_prob2.py </p>
+
+
+			<h3 id="prob-3">Problem 3a: Prime Number Finder</h3>
+
+              <div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+			
+			<p>Write a program that prompts the user to enter in a postiive number.  Only accept positive numbers - if the user supplies a negative number or zero you should re-prompt them.</p>
+			
+			<p>Next, determine if the given number is a prime number.  A prime number is a number that has no positive divisors other than 1 and itself.  For example, 5 is prime because the only numbers that evenly divide into 5 are 1 and 5.  6, however, is not prime because 1, 2, 3 and 6 are all divisors of 6.</p>
+			
+			<p>Here's a sample running of the program:</p>
+			
+			<pre>Enter a positive number to test: <u>5</u>
+
+2 is NOT a divisor of 5  ... continuing
+3 is NOT a divisor of 5  ... continuing
+4 is NOT a divisor of 5  ... continuing
+
+5 is a prime number!</pre>
+
+			<p>And here's another running:</p>
+			
+			<pre>Enter a positive number to test: <u>9</u>
+
+2 is NOT a divisor of 9  ... continuing
+3 is a divisor of 9  ... stopping
+
+9 is not a prime number.</pre>
+
+			<p>Some notes on your program:</p>
+			
+			<ul>
+				<li>1 is technically not a prime number.</li>
+				<li>Once you find a number that evenly divides into your test number you do not need to continue testing additional numbers - the number cannot be prime.</li>
+			</ul>
+
+<p><br>This program should be named as follows:
+LastNameFirstName_assign5_prob3a.py </p>
+
+			<br style="page-break-after: always;">
+
+			<h3>Problem 3b: Find all Prime Numbers between 1 and 1000</h3>
+			
+			<p>Next, make a copy of Part A and update it so that the program now finds all prime numbers between 1 and 1000.  Here's a sample running of your program:</p>
+			
+			<pre>1 is technically not a prime number.
+2 is a prime number!
+3 is a prime number!
+5 is a prime number!
+7 is a prime number!
+11 is a prime number!
+
+... cut ...
+
+977 is a prime number!
+983 is a prime number!
+991 is a prime number!
+997 is a prime number!</pre>
+
+<p>This program should be named as follows:
+LastNameFirstName_assign5_prob3b.py </p>
+
+			<br style="page-break-after: always;">
+
+			<h3>Part 3c: Custom Number Range</h3>
+
+              <div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+			
+			<p>Make a copy of Part B and update it so that the user can choose to examin a specific range of numbers for prime numbers.  Here's a sample running of your program:</p>
+			
+			<pre>Start number: <u>5</u>
+End number: <u>-5</u>
+Start and end must be positive
+
+Start number: <u>5</u>
+End number: <u>3</u>
+End number must be greater than start number
+
+Start number: <u>5</u>
+End number: <u>23</u>
+
+5
+7
+11
+13
+17
+19
+23</pre>
+
+			<p>Some notes on your program:</p>
+			
+			<ul>
+				<li>You need to ensure that the start and end numbers are both postive.</li>
+				<li>You also need to ensure that the start number is less than the end number.</li>
+			</ul>
+
+<p><br>This program should be named as follows:
+LastNameFirstName_assign5_prob3c.py </p>
+			
+			<h3>Part 3d: Tabular Formatting</h3>
+			
+			<p>Print the prime numbers that you find within the given range so that only 10 numbers print per line.  Align the numbers so that they stack neatly on top of one another in all cases (i.e. the table should line up no matter what number range you are analyzing). The table you generate should use the MINIMUM amount of spaces needed to align itself (i.e. if the largest number if your range is "100" then all of your values should be formatted to be exactly 4 characters in size.  If the highest value in your range is "1000" then all values should be formatted to be 5 characters in size). Here's a sample running of the program:</p>
+			
+			<pre>Start number: <u>1</u>
+End number: <u>100</u>
+   2   3   5   7  11  13  17  19  23  29
+  31  37  41  43  47  53  59  61  67  71
+  73  79  83  89  97 </pre>
+ 
+ 			And here's another running:
+ 			
+ 			<pre>Start number: <u>1</u>
+End number: <u>1000</u>
+    2    3    5    7   11   13   17   19   23   29
+   31   37   41   43   47   53   59   61   67   71
+   73   79   83   89   97  101  103  107  109  113
+  127  131  137  139  149  151  157  163  167  173
+  179  181  191  193  197  199  211  223  227  229
+  233  239  241  251  257  263  269  271  277  281
+  283  293  307  311  313  317  331  337  347  349
+  353  359  367  373  379  383  389  397  401  409
+  419  421  431  433  439  443  449  457  461  463
+  467  479  487  491  499  503  509  521  523  541
+  547  557  563  569  571  577  587  593  599  601
+  607  613  617  619  631  641  643  647  653  659
+  661  673  677  683  691  701  709  719  727  733
+  739  743  751  757  761  769  773  787  797  809
+  811  821  823  827  829  839  853  857  859  863
+  877  881  883  887  907  911  919  929  937  941
+  947  953  967  971  977  983  991  997 </pre>
+ 
+ 			<pre>Start number: <u>9900</u>
+End number: <u>10100</u>
+  9901  9907  9923  9929  9931  9941  9949  9967  9973 10007
+ 10009 10037 10039 10061 10067 10069 10079 10091 10093 10099</pre>
+ 
+<p><br>This program should be named as follows:
+LastNameFirstName_assign5_part3d.py </p>
+
+
+
+
+
+
+
+
+<h3 id="prob-4">Problem 4a: Addition Table</h3>
+
+              <div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+              
+              <p>Write a program that prompts the user for two integers that are greater than or equal to zero.  Ensure that the first integer is less than the second integer.  Next, write a program that generates an "addition table" using these numbers that computes the sums of all possible values - use the output below as a guide:</p>
+              
+              <pre>Lowest number: <u>-5</u>
+Lowest number must be 0 or greater
+Lowest number: <u>0</u>
+Highest number: <u>0</u>
+Highest number must be larger than lowest number!
+Highest number: <u>5</u>
+
+ +     0   1   2   3   4   5
+----------------------------
+0  |   0   1   2   3   4   5
+1  |   1   2   3   4   5   6
+2  |   2   3   4   5   6   7
+3  |   3   4   5   6   7   8
+4  |   4   5   6   7   8   9
+5  |   5   6   7   8   9  10</pre>
+
+			<p>Here are some hints to get you started:</p>
+			
+			<ul>
+				<li>Don't worry about formatting your table until you have a basic version printing out correctly.</li>
+				<li>Start by generating the first line of output (the '+' sign and the column headings)</li>
+				<li>Next, generate the left most column (the row headings)</li>
+				<li>Big hint: Python prints from top to bottom, left to right.  Before moving onto the next row, what do you have to do?  Do you need another loop here?</li>
+				<li>When you're ready to format your table you need to ensure that no matter what there will always be room for all of your numbers.  Hint: you might need to count the size of your largest possible value and use that as part of the "format" function.  For example, notice how the spacing in the following tables always works out no matter the size of the values being printed:
+				
+				<pre>Lowest number: <u>9999</u>
+Highest number: <u>10004</u>
+
+   +      9999  10000  10001  10002  10003  10004
+-------------------------------------------------
+9999  |  19998  19999  20000  20001  20002  20003
+10000 |  19999  20000  20001  20002  20003  20004
+10001 |  20000  20001  20002  20003  20004  20005
+10002 |  20001  20002  20003  20004  20005  20006
+10003 |  20002  20003  20004  20005  20006  20007
+10004 |  20003  20004  20005  20006  20007  20008</pre>
+
+				<pre>Lowest number: <u>9999999</u>
+Highest number: <u>10000004</u>
+
+    +        9999999  10000000  10000001  10000002  10000003  10000004
+----------------------------------------------------------------------
+9999999  |  19999998  19999999  20000000  20000001  20000002  20000003
+10000000 |  19999999  20000000  20000001  20000002  20000003  20000004
+10000001 |  20000000  20000001  20000002  20000003  20000004  20000005
+10000002 |  20000001  20000002  20000003  20000004  20000005  20000006
+10000003 |  20000002  20000003  20000004  20000005  20000006  20000007
+10000004 |  20000003  20000004  20000005  20000006  20000007  20000008</pre>
+				
+				
+				</li>
+			</ul>
+
+<p>This program should be named as follows:
+LastNameFirstName_assign5_prob4a.py</p>
+
+
+<h3>Part 4b: Addition Table</h3>
+
+              <div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+              
+              <p>Next, add in a feature that asks the user if they want to identify 'Prime' numbers in their table. If the user elects to show prime numbers you can print a lowercase 'p' character after each prime number.  Ensure that your table displays correctly, as described above.</p>
+              
+              <pre>Lowest number: <u>0</u>
+Highest number: <u>10</u>
+Would you like to identify Prime numbers in your table? (y/n): <u>pikachu</u>
+Invalid command, try again
+Would you like to identify Prime numbers in your table? (y/n): <u>y</u>
+ +     0   1   2   3   4   5   6   7   8   9  10
+------------------------------------------------
+0  |   0   1  2p  3p   4  5p   6  7p   8   9  10
+1  |   1  2p  3p   4  5p   6  7p   8   9  10 11p
+2  |  2p  3p   4  5p   6  7p   8   9  10 11p  12
+3  |  3p   4  5p   6  7p   8   9  10 11p  12 13p
+4  |   4  5p   6  7p   8   9  10 11p  12 13p  14
+5  |  5p   6  7p   8   9  10 11p  12 13p  14  15
+6  |   6  7p   8   9  10 11p  12 13p  14  15  16
+7  |  7p   8   9  10 11p  12 13p  14  15  16 17p
+8  |   8   9  10 11p  12 13p  14  15  16 17p  18
+9  |   9  10 11p  12 13p  14  15  16 17p  18 19p
+10 |  10 11p  12 13p  14  15  16 17p  18 19p  20</pre>
+
+<p>This program should be named as follows:
+LastNameFirstName_assign5_prob4b.py</p>
+
+
+<h3>Part 4c: Addition Table (Extra Credit)</h3>
+
+			  <p>Expand your program to support ALL of the arithmetic operators (+, -, *, /, // and %) - prompt the user for an operator to use and then display the desired table.  Validate your data accordingly.  Ensure that your tables print out using the expected formatting.  Note that negative numbers are not considered Prime for the purpose of this part of the assignment.</p>
+
+			  <p>This program should be named as follows:
+LastNameFirstName_assign5_prob4c.py</p>
