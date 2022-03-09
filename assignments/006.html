@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="../index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="../schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="../assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class=" assignment-page">
+                <h2>Assignment #6</h2>
+                <p>For this assignment you will be writing 3 programs which should be saved independently as their own ".py" file. The filename you should use for each program is outlined in the sections below. When you're finished you should submit your programs to the Assignment #6 category inside of NYU Classes.</p>
+                <h3>Part 1: Simple Functions</h3>
+
+
+<p>For this part you will be completing a series of short programming challenges that use various function concepts. Each challenge should be saved as its own file (i.e. Zhao_Emily_Assign6_part1_challenge1.py).</p>
+
+<h4>Challenge 1</h4>
+
+<p>Copy the following program into a new file. Then replace the underlined line of code with the correct statement. Make sure to follow the directions provided!</p>
+
+<pre>
+# these are the basic arithmetic functions you will be using for this challenge
+
+# function:   add
+# input:      two integers/floats
+# processing: adds the two supplied values
+# output:     returns the sum (integer/float)
+def add(a,b):
+    return a+b
+
+# function:   sub
+# input:      two integers/floats
+# processing: subtracts the two supplied values
+# output:     returns the difference (integer/float)
+def sub(a,b):
+    return a-b
+
+# function:   mult
+# input:      two integers/floats
+# processing: multiplies the two supplied values
+# output:     returns the product (integer/float)
+def mult(a,b):
+    return a*b
+
+# function:   sqrt
+# input:      one integer/float
+# processing: computes the square root of the supplied value
+# output:     returns the square root (float)
+def sqrt(a):
+    return a**0.5
+
+# function:   square
+# input:      one integer/float
+# processing: raises the supplied integer/float to the 2nd power
+# output:     returns the square (integer/float)
+def square(a):
+    return a**2
+
+# these are the two points you will be using
+
+# point 1
+x1 = 0
+y1 = 0
+
+# point 2
+x2 = 100
+y2 = 100
+
+# compute the distance between the two points above using the distance formula.
+# you may ONLY use the functions above to do this - no math operators are allowed!  
+# your calculation must also be done on a single line.
+distance = ______________________
+
+print (distance) # answer should be 141.4213562373095</pre>
+
+<p>Recall that the distance formula is defined as follows:</p>
+
+<p><img src="assignment-resources/distance_formula.png" /></p>
+
+<h4>Challenge 2</h4>
+
+<p>Write two functions called 'maximum' and 'minimum' - these function should accept two arguments and <strong>return</strong> the larger/smaller of the two supplied values. For the purpose of this program you can always assume that the arguments being supplied are numeric. Describe your function using IPO notation. Your program should work perfectly with the following code:</p>
+
+<pre>
+a = 5
+b = 10
+c = 15
+d = 20
+
+ans1 = maximum(a,b)
+ans2 = maximum(a,c)
+ans3 = maximum(a,d)
+print (ans1,ans2,ans3) # 10 15 20
+
+ans4 = minimum(d,c)
+ans5 = minimum(d,b)
+ans6 = minimum(d,a)
+print (ans4,ans5,ans6) # 15 10 5
+
+ans7 = maximum( maximum(a,b), maximum(c,d) )
+print (&quot;The biggest is:&quot;, ans7)</pre>
+
+<h4>Challenge 3</h4>
+
+<p>Write a function called 'valid_date' which accepts two arguments - a month and a day (both integers, will always be integers). Test to see if the date being described is valid or not. If the date is valid your function should <strong>return</strong> a True value, and if it is not it should return a <strong>False</strong> value. For the purpose of this program you can assume February has 28 days. Describe your function using IPO notation. Your program should work perfectly with the following code:</p>
+
+<pre>
+print (valid_date(99,1)) # False
+print (valid_date(1,99)) # False
+print (valid_date(99,99)) # False
+
+print (valid_date(-99,1)) # False
+print (valid_date(1,-99)) # False
+print (valid_date(-99,-99)) # False
+
+print (valid_date(9,25)) #True
+print (valid_date(10,15)) # True
+print (valid_date(11,31)) # False
+print (valid_date(2,28)) # True
+print (valid_date(2,29)) # False</pre>
+
+<h4>Challenge 4</h4>
+
+<pre>
+# write a function called 'simple_sort_version1' that accepts two values.  you can assume
+# that your three values will always be the same data type (all ints, all floats or all strings).
+# sort these two values in ascending order and <strong>return</strong> them in that order. 
+# you may use any function that you've written so far in this assignment if you'd like to (maximum, minimum, etc)
+
+# your function should work perfectly with the following lines of code
+a,b = simple_sort_version1(10,20)
+print (a,b) # 10 20
+
+a,b = simple_sort_version1(20,10)
+print (a,b) # 10 20
+
+a,b = simple_sort_version1(30,30)
+print (a,b) # 30 30</pre>
+
+<h4>Challenge 5</h4>
+
+<pre>
+# next, write a new function called 'simple_sort_version2' that accepts three values.  you can assume
+# that your three values will always be the same data type (all ints, all floats or all strings).
+# sort these values in ascending order and <strong>return</strong> them. 
+# you may use any function that you've written so far in this assignment if you'd like to (simple_sort_version1, maximum, minimum, etc)
+
+# your function should work perfectly with the following lines of code
+a,b,c = simple_sort_version2(10,20,30)
+print (a,b,c) # 10 20 30
+
+a,b,c = simple_sort_version2(10,30,20)
+print (a,b,c) # 10 20 30
+
+a,b,c = simple_sort_version2(30,20,10)
+print (a,b,c) # 10 20 30
+
+a,b,c = simple_sort_version2(30,20,20)
+print (a,b,c) # 20 20 30</pre>
+
+
+
+
+<br style="page-break-after: always;">
+<h3>Part 2</h3>
+
+<p>For part 2 of this assignment you will be writing a series of programs that build on one another, so it's important to progress through this part in order. You only need to submit the final version of your code (no need to submit the intermediate steps that you took in order to reach the final program).  When you're finished you should submit your program to the Assignment #6 category inside of NYU Classes.</p>
+
+<h3>Part 2a: Number Analyzer</h3>
+
+<p>Write a series of five functions that determine if a given positive integer is EVEN, ODD, PRIME, PERFECT and ABUNDANT. Each of these functions should accept a single integer as an argument and return whether the integer meets the criteria for that classification. Here's some IPO notation to get you started:</p>
+
+<pre>
+# function:   is_even 
+# input:      a positive integer 
+# processing: determines if the supplied number is even 
+# output:     boolean</pre>
+
+<pre>
+# function:   is_odd
+# input:      a positive integer
+# processing: determines if the supplied number is odd
+# output:     boolean</pre>
+
+<pre>
+# function:   is_prime
+# input:      a positive integer
+# processing: determines if the supplied number is prime. a prime number is
+#             a number that only has two factors - the number 1 and itself.
+#             for example, 17 is prime because it only has two factors (1 and 17).
+#             in order to determine this you might need to count the # of factors
+#             between 1 and the number you are testing. a note on efficiency: if you are
+#             testing a number (say, 15) and you find a factor (say, 3) - do you need to even continue
+#             to find additional factors?
+# output:     boolean</pre>
+
+<pre>
+# function:   is_perfect
+# input:      a positive integer
+# processing: determines if the supplied number is perfect. a perfect number
+#             is a number that is equal to the sum of its factors (i.e. the
+#             number 6 is perfect because 6 = 1 + 2 + 3)
+# output:     boolean</pre>
+
+<pre>
+# function:   is_abundant
+# input:      a positive integer
+# processing: determines if the supplied number is abundant. an abundant number
+#             is a number that is less than the sum of its factors (i.e. the
+#             number 12 is abundant because 12 &lt; 1 + 2 + 3 + 4 + 6)
+# output:     boolean</pre>
+
+<p>Test your code before continuing!!! Make sure that your functions work as desired and then move onto the next step. Here's some sample code that will help you identify whether your functions are working correctly:</p>
+
+<pre>
+a1 = is_even(5)
+a2 = is_even(6)
+print (a1, a2) # False True
+
+b1 = is_odd(5)
+b2 = is_odd(6)
+print (b1, b2) # True False
+
+c1 = is_prime(5)
+c2 = is_prime(17)
+c3 = is_prime(21)
+print (c1,c2,c3) # True True False
+
+d1 = is_perfect(6)
+d2 = is_perfect(7)
+d3 = is_perfect(10)
+print (d1,d2,d3) # True False False
+
+e1 = is_abundant(12)
+e2 = is_abundant(13)
+e3 = is_abundant(14)
+print (e1,e2,e3) # True False False</pre>
+
+<p>Once you're happy with your functions you should write a short program to prompt the user for a starting and ending number (both integers) - ensure that the first number is positive, and that the second number is greater than the first number.  Then use your functions to analyze all numbers in this range to and generate output similar to the following:</p>
+
+<pre>Enter starting number: -5
+Invalid, try again
+Enter starting number: 5
+Enter ending number: 0
+Invalid, try again
+Enter ending number: 30
+5 is ... odd prime 
+6 is ... even perfect 
+7 is ... odd prime 
+8 is ... even 
+9 is ... odd 
+10 is ... even 
+11 is ... odd prime 
+12 is ... even abundant 
+13 is ... odd prime 
+14 is ... even 
+15 is ... odd 
+16 is ... even 
+17 is ... odd prime 
+18 is ... even abundant 
+19 is ... odd prime 
+20 is ... even abundant 
+21 is ... odd 
+22 is ... even 
+23 is ... odd prime 
+24 is ... even abundant 
+25 is ... odd 
+26 is ... even 
+27 is ... odd 
+28 is ... even perfect 
+29 is ... odd prime 
+30 is ... even abundant </pre>
+
+
+<h3>Part 2b: Number Analyzer</h3>
+
+<p>Next, write a program that prompts the allows the user to analyze numbers within a given range for numbers that fit the above criteria. The program should continue to execute as long as the user wishes to keep going. Your program should rely on the functions you wrote for part 2a - you shouldn't have to re-write the routines that you worked out to compute whether a number is prime, abundant, perfect, odd or even. Here's a sample running of the program:</p>
+
+<pre>
+Main Menu
+
+1 - Find all prime numbers within a given range
+2 - Find all perfect numbers within a given range
+3 - Find all abundant numbers within a given range
+4 - Chart all even, odd, prime, perfect and abundant numbers within a given range
+5 - Quit
+
+
+Your choice: <u>apple</u>
+I don't understand that ...
+
+
+Main Menu
+
+1 - Find all prime numbers within a given range
+2 - Find all perfect numbers within a given range
+3 - Find all abundant numbers within a given range
+4 - Chart all even, odd, prime, perfect and abundant numbers within a given range
+5 - Quit
+
+
+Your choice: <u>1</u>
+Enter starting number (positive only): <u>-5</u>
+Invalid, try again
+Enter starting number (positive only): <u>5</u>
+Enter ending number: <u>3</u>
+Invalid, try again
+Enter ending number: <u>20</u>
+
+All prime numbers between 5 and 20
+##############
+5
+7
+11
+13
+17
+19
+##############
+
+Main Menu
+
+1 - Find all prime numbers within a given range
+2 - Find all perfect numbers within a given range
+3 - Find all abundant numbers within a given range
+4 - Chart all even, odd, prime, perfect and abundant numbers within a given range
+5 - Quit
+
+
+Your choice: <u>2</u>
+Enter starting number (positive only): <u>1</u>
+Enter ending number: <u>1000</u>
+
+All perfect numbers between 1 and 1000
+##############
+6
+28
+496
+##############
+
+Main Menu
+
+1 - Find all prime numbers within a given range
+2 - Find all perfect numbers within a given range
+3 - Find all abundant numbers within a given range
+4 - Chart all even, odd, prime, perfect and abundant numbers within a given range
+5 - Quit
+
+
+Your choice: <u>3</u>
+Enter starting number (positive only): <u>1</u>
+Enter ending number: <u>100</u>
+
+All abundant numbers between 1 and 100
+##############
+12
+18
+20
+24
+30
+36
+40
+42
+48
+54
+56
+60
+66
+70
+72
+78
+80
+84
+88
+90
+96
+100
+##############
+
+Main Menu
+
+1 - Find all prime numbers within a given range
+2 - Find all perfect numbers within a given range
+3 - Find all abundant numbers within a given range
+4 - Chart all even, odd, prime, perfect and abundant numbers within a given range
+5 - Quit
+
+
+Your choice: <u>4</u>
+Enter starting number (positive only): <u>1</u>
+Enter ending number: <u>100</u>
+
+Number    Even      Odd       Prime     Perfect   Abundant 
+1                   x                                      
+2         x                   x                             
+3                   x         x                             
+4         x                                                 
+5                   x         x                             
+6         x                             x                   
+7                   x         x                             
+8         x                                                 
+9                   x                                       
+10        x                                                 
+11                  x         x                             
+12        x                                       x         
+13                  x         x                             
+14        x                                                 
+15                  x                                       
+16        x                                                 
+17                  x         x                             
+18        x                                       x         
+19                  x         x                             
+20        x                                       x         
+21                  x                                       
+22        x                                                 
+23                  x         x                             
+24        x                                       x         
+25                  x                                       
+26        x                                                 
+27                  x                                       
+28        x                             x                   
+29                  x         x                             
+30        x                                       x         
+31                  x         x                             
+32        x                                                 
+33                  x                                       
+34        x                                                 
+35                  x                                       
+36        x                                       x         
+37                  x         x                             
+38        x                                                 
+39                  x                                       
+40        x                                       x         
+41                  x         x                             
+42        x                                       x         
+43                  x         x                             
+44        x                                                 
+45                  x                                       
+46        x                                                 
+47                  x         x                             
+48        x                                       x         
+49                  x                                       
+50        x                                                 
+51                  x                                       
+52        x                                                 
+53                  x         x                             
+54        x                                       x         
+55                  x                                       
+56        x                                       x         
+57                  x                                       
+58        x                                                 
+59                  x         x                             
+60        x                                       x         
+61                  x         x                             
+62        x                                                 
+63                  x                                       
+64        x                                                 
+65                  x                                       
+66        x                                       x         
+67                  x         x                             
+68        x                                                 
+69                  x                                       
+70        x                                       x         
+71                  x         x                             
+72        x                                       x         
+73                  x         x                             
+74        x                                                 
+75                  x                                       
+76        x                                                 
+77                  x                                       
+78        x                                       x         
+79                  x         x                             
+80        x                                       x         
+81                  x                                       
+82        x                                                 
+83                  x         x                             
+84        x                                       x         
+85                  x                                       
+86        x                                                 
+87                  x                                       
+88        x                                       x         
+89                  x         x                             
+90        x                                       x         
+91                  x                                       
+92        x                                                 
+93                  x                                       
+94        x                                                 
+95                  x                                       
+96        x                                       x         
+97                  x         x                             
+98        x                                                 
+99                  x                                       
+100       x                                       x         
+Main Menu
+
+1 - Find all prime numbers within a given range
+2 - Find all perfect numbers within a given range
+3 - Find all abundant numbers within a given range
+4 - Chart all even, odd, prime, perfect and abundant numbers within a given range
+5 - Quit
+
+
+Your choice: <u>5</u>
+
+Goodbye!</pre>
+
+<p>Note that you might want to write some additional &quot;helper&quot; functions - for example, the options above all require the user to supply a range of numbers to analyze. You can probably write a function that does this so you don't have to continually copy and paste the same code over and over again.</p>
+
+			  <p>This program should be named as follows:
+LastNameFirstName_assign6_part2.py</p>
+
+
+
+
+
+
+<br style="page-break-after: always;">
+<h3>Part 3</h3>
+
+<p>For part 3 of this assignment you will be writing a series of programs that build on one another, so it's important to progress through this part in order. You only need to submit the final version of your code (no need to submit the intermediate steps that you took in order to reach the final program) as well as the "module" that you create for Part 3a.  When you're finished you should submit your program to the Assignment #6 category inside of NYU Classes.</p>
+
+<h3>Part 3a</h3>
+<p>For this step you are given three functions - go ahead and copy these functions into a new file called "digitalclock.py":</p>
+
+<pre># function:   horizontal_line
+# input:      a width value (integer) and a single character (string)
+# processing: generates a single horizontal line of the desired size
+# output:     returns the generated pattern (string)
+def horizontal_line(width,char):
+    return width*char + "\n"
+
+# function:   vertical_line
+# input:      a shift value and a height value (both integers)  and a single character (string)
+# processing: generates a single vertical line of the desired height.  the line is
+#             offset from the left side of the screen using the shift value
+# output:     returns the generated pattern (string)
+def vertical_line(shift,height,char):
+    pattern = ""
+    for i in range(height):
+        pattern += shift*" " + char + "\n"
+    return pattern
+
+# function:   two_vertical_lines
+# input:      a width value and a height value (both integers)  and a single character (string)
+# processing: generates two vertical lines.  the first line is along the left side of
+#             the screen. the second line is offset using the "width" value supplied
+# output:     returns the generated pattern (string)
+def two_vertical_lines(width,height,char):
+    pattern = ""
+    for i in range(height):
+        pattern += char + " "*(width-2) + char + "\n"
+    return pattern</pre>
+    
+<p>Next, create a file called 'LastName_FirstName_Assign6_part3.py' - make sure this file is in the same folder as your newly created 'digitalclock.py' file.  Import your module and run the following code - you should be able to see a series of graphical patterns that match the output below:</p>
+
+<pre>import digitalclock
+
+print ("Horizontal line, width = 5:")
+temp = digitalclock.horizontal_line(5, '*')
+print (temp)
+print ()
+
+print ("Horizontal line, width = 10:")
+temp = digitalclock.horizontal_line(10, '+')
+print (temp)
+print ()
+
+print ("Horizontal line, width = 15:")
+temp = digitalclock.horizontal_line(15, 'z')
+print (temp)
+print ()
+
+print ("Vertical Line, shift=0; height=3:")
+temp = digitalclock.vertical_line(0, 3, '!')
+print (temp)
+print ()
+
+print ("Vertical Line, shift=3; height=3:")
+temp = digitalclock.vertical_line(3, 3, '&')
+print (temp)
+print ()
+
+print ("Vertical Line, shift=6; height=5:")
+temp = digitalclock.vertical_line(6, 5, '$')
+print (temp)
+print ()
+
+print ("Two Vertical Lines, width=3; height=3:")
+temp = digitalclock.two_vertical_lines(3, 3, '^')
+print (temp)
+print ()
+
+print ("Two Vertical Lines, width=4; height=5:")
+temp = digitalclock.two_vertical_lines(4, 5, '@')
+print (temp)
+print ()
+
+print ("Two Vertical Lines, width=5; height=2:")
+temp = digitalclock.two_vertical_lines(5, 2, '#')
+print (temp)
+print ()</pre>
+
+<p><strong>Expected Output:</strong></p>
+
+<pre>Horizontal line, width = 5:
+*****
+
+Horizontal line, width = 10:
+++++++++++
+
+Horizontal line, width = 15:
+zzzzzzzzzzzzzzz
+
+Vertical Line, shift=0; height=3:
+!
+!
+!
+
+
+Vertical Line, shift=3; height=3:
+   &
+   &
+   &
+
+
+Vertical Line, shift=6; height=5:
+      $
+      $
+      $
+      $
+      $
+
+
+Two Vertical Lines, width=3; height=3:
+^ ^
+^ ^
+^ ^
+
+
+Two Vertical Lines, width=4; height=5:
+@  @
+@  @
+@  @
+@  @
+@  @
+
+
+Two Vertical Lines, width=5; height=2:
+#   #
+#   #</pre>
+
+<br style="page-break-after: always;">
+<h3>Part 3b</h3>
+
+<p>As you can see, you have three "primitive" functions for generating simple shapes (horizontal lines, vertical lines and parallel vertical lines).  Your next task is to write 10 new functions that generate the digits 0-9 using your three line functions.  These functions should be stored in your 'digitalclock.py' module.  The goal here is to render the digits as they would appear on a digital display:</p>
+
+<img src="assignment-resources/display.jpeg" width="500">
+
+<p>Each function should accept a "width" argument to control how wide the number should be as well as a single character.  You can assume numbers will always be printed with a height of 5.  For example, here is the function for the number 1:</p>
+
+<pre>
+# function:   number_1
+# input:      a width value (integer) and a single character (string)
+# processing: generates the number 1 as it would appear on a digital display
+#             using the supplied width value
+# output:     returns the generated pattern (string)
+def number_1(width, character):
+	pattern = vertical_line(width-1, 5, character)
+	return pattern</pre>
+	
+<p>And here's a sample program that calls the function a few times (test this in your main program, not in your module):</p>
+
+<pre>print ("Number 1, width=5: ")
+temp = digitalclock.number_1(5, '*')
+print(temp)
+print()
+
+print ("Number 1, width=10: ")
+temp = digitalclock.number_1(10, '*')
+print(temp)
+print()
+
+print ("Number 1, width=2: ")
+temp = digitalclock.number_1(2, '*')
+print(temp)
+print()</pre>
+
+<p>And here's the expected output:</p>
+
+<pre>Number 1, width=5: 
+    *
+    *
+    *
+    *
+    *
+    
+
+Number 1, width=10: 
+         *
+         *
+         *
+         *
+         *
+         
+
+Number 1, width=2: 
+ *
+ *
+ *
+ *
+ *
+ 
+ </pre>
+ 
+ 
+<p>Here's a sample program that prints all of the numbers (0-9).</p>
+
+<pre>temp = digitalclock.number_0(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_1(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_2(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_3(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_4(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_5(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_6(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_7(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_8(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.number_9(5, '*')
+print(temp)
+print()</pre>
+
+<p>And here's the expected output:</p>
+
+<pre>*****
+*   *
+*   *
+*   *
+*****
+
+
+    *
+    *
+    *
+    *
+    *
+
+
+*****
+    *
+*****
+*
+*****
+
+
+*****
+    *
+*****
+    *
+*****
+
+
+*   *
+*   *
+*****
+    *
+    *
+
+
+*****
+*
+*****
+    *
+*****
+
+
+*****
+*
+*****
+*   *
+*****
+
+
+*****
+    *
+    *
+    *
+    *
+
+
+*****
+*   *
+*****
+*   *
+*****
+
+
+*****
+*   *
+*****
+    *
+    *
+    
+    </pre>
+
+<br style="page-break-after: always;">    
+<h3>Part 3c</h3>
+
+<p>Write a function called 'print_number' that prints out any desired number to the screen.  This function should also be placed in your 'digitalclock.py' module.  Here's the IPO for this function:</p>
+
+<pre># function:   print_number
+# input:      a number to print (integer), a width value (integer) and a single character (string)
+# processing: prints the desired number to the screen using the supplied width value
+# output:     does not return anything</pre>
+
+<p>And here's some sample code that you can use to test your function:</p>
+
+<pre>digitalclock.print_number(0, 5, '*')
+digitalclock.print_number(1, 6, '*')
+digitalclock.print_number(2, 7, '*')
+digitalclock.print_number(3, 8, '*')
+digitalclock.print_number(4, 9, '*')
+digitalclock.print_number(5, 10, '*')
+digitalclock.print_number(6, 11, '*')
+digitalclock.print_number(7, 12, '*')
+digitalclock.print_number(8, 13, '*')
+digitalclock.print_number(9, 14, '*')</pre>
+
+<p>And here's the expected output:</p>
+
+<pre>*****
+*   *
+*   *
+*   *
+*****
+
+     *
+     *
+     *
+     *
+     *
+
+*******
+      *
+*******
+*
+*******
+
+********
+       *
+********
+       *
+********
+
+*       *
+*       *
+*********
+        *
+        *
+
+**********
+*
+**********
+         *
+**********
+
+***********
+*
+***********
+*         *
+***********
+
+************
+           *
+           *
+           *
+           *
+
+*************
+*           *
+*************
+*           *
+*************
+
+**************
+*            *
+**************
+             *
+             *</pre>
+
+    
+<br style="page-break-after: always;">    
+<h3>Part 3d</h3>
+
+<p>Write two new functions that simulate the addition and subtraction operators. Each of these functions should accept a width value as an argument (integer) and a single character (string) -- the function should then return the generated pattern.  You can assume the operators will always be 5 units high. Again, these functions should be placed in your 'digitalclock.py' module. Here's some sample code:</p>
+
+<pre>temp = digitalclock.plus(5, '*')
+print(temp)
+print()
+
+temp = digitalclock.minus(5, '*')
+print(temp)</pre>
+
+<p>Which will generate ...</p>
+
+<pre>  *
+  *
+*****
+  *
+  *
+
+
+
+*****
+
+
+</pre>
+
+<p>Note that your "plus" sign may look odd if it is rendered using an even size value - for example:</p>
+
+<pre># rendered using a width of 6
+  *
+  *
+******
+  *
+  *
+</pre>
+
+<p>To fix this you should double up the vertical line in the center for even sizes, like this:</p>
+
+<pre># rendered using a width of 6
+  **
+  **
+******
+  **
+  **
+</pre>
+
+<br style"page-break-after: always;">
+<h3>Part 3e</h3>
+
+<p>Write a function called "check_answer" which will determine if a given addition or subtraction problem was solved correctly. This function should be inside of your "digitalclock.py" module. Here's the IPO notation for the function:</p>
+
+<pre># function:   check_answer
+# input:      two numbers (number1 & number2, both integers); an answer (an integer)
+#             and an operator (+ or -, expressed as a String)
+# processing: determines if the supplied expression is correct.  for example, if the operator
+#             is "+", number1 = 1, number2 = 2 and answer = 3 then the expression is correct
+#             (1 + 2 = 3).
+# output:     returns True if the expression is correct, False if it is not correct
+</pre>
+
+<p>Here's a sample program that you can use to test your function:</p>
+
+<pre>answer1 = digitalclock.check_answer(1, 2, 3, "+")
+print (answer1)
+answer2 = digitalclock.check_answer(1, 2, -1, "-")
+print (answer2)
+answer3 = digitalclock.check_answer(9, 5, 3, "+")
+print (answer3)
+answer4 = digitalclock.check_answer(8, 2, 4, "-")
+print (answer4)</pre>
+
+<p>And here's the expected output:</p>
+
+<pre>True
+True
+False
+False</pre>
+
+
+<h3>Part 3f</h3>
+
+<p>Finally, put everything together and write a program that lets the user practice a series of random addition and subtraction problems.  Begin by asking the user for a number of problems (only accept positive values) and a size for their numbers (only accept numbers between 5 and 10).  Also prompt them for a single character to be used to generate their patterns - only accept single character strings (i.e. 'a' is OK, but 'apple' is not).  The generate a series of random addition and subtraction problems - display the numbers to the user with your digital display functions.  Then prompt the user for an answer and check the answer using your check_answer function.  Your program should also keep track of how many correct questions the user answered during their game.  Here's a sample running of the program:</p>
+
+<pre>How many problems would you like to attempt? -5
+Invalid number, try again
+
+How many problems would you like to attempt? 5
+How wide do you want your digits to be? 5-10: 3
+Invalid width, try again
+
+How wide do you want your digits to be? 5-10: 5
+
+What character would you like to use? foo
+String too long, try again
+What character would you like to use? *
+
+Here we go!
+
+What is .....
+
+*****
+    *
+*****
+    *
+*****
+
+  *
+  *
+*****
+  *
+  *
+
+    *
+    *
+    *
+    *
+    *
+
+= 4
+Correct!
+
+What is .....
+
+*****
+    *
+*****
+*
+*****
+
+
+
+*****
+
+
+
+*****
+    *
+    *
+    *
+    *
+
+= -5
+Correct!
+
+What is .....
+
+    *
+    *
+    *
+    *
+    *
+
+
+
+*****
+
+
+
+*****
+*
+*****
+    *
+*****
+
+= 0
+Sorry, that's not correct.
+
+What is .....
+
+*****
+    *
+*****
+*
+*****
+
+  *
+  *
+*****
+  *
+  *
+
+    *
+    *
+    *
+    *
+    *
+
+= 3
+Correct!
+
+What is .....
+
+*****
+    *
+*****
+*
+*****
+
+  *
+  *
+*****
+  *
+  *
+
+*****
+    *
+*****
+*
+*****
+
+= 4
+Correct!
+
+You got 4 out of 5 correct!</pre>
+
+			  <p>This program should be named as follows:
+LastNameFirstName_assign6_part3.py</p>
+
+
+<!-- <h3>Part 4: Interactive Fiction (Extra Credit)</h3>
+
+              <div class="alert alert-info">This is a solo project.  You may NOT work as a group for this project.</div>
+
+<p>For this assignment you will be writing a simple &quot;<a href="https://en.wikipedia.org/wiki/Interactive_fiction" rel="noopener" target="_blank">Interactive Fiction</a>&quot; game that allows a user to experience a story by typing in textual commands. This genre of video game was popular when personal computers started to become popular in the 1970's and 80's.</p>
+
+<p>Before you begin, try your hand at playing one of these games to get a feel for how this kind of program operates:</p>
+
+<ul>
+	<li><a href="http://textadventures.co.uk/games/play/5zyoqrsugeopel3ffhz_vq" rel="noopener" target="_blank">Zork I</a></li>
+	<li><a href="http://iplayif.com/?story=http%3A%2F%2Fwww.douglasadams.com%2Fcreations%2Fhhgg.z3" rel="noopener" target="_blank">The Hitchhiker's Guide to the Galaxy</a></li>
+</ul>
+
+<p>You'll notice that the user has the ability to explore each story in more or less their own way - the game unfolds as a non-linear experience.</p>
+
+<p>You can construct a game like this using functions fairly easily. In order to do this you will need to identify distinct &quot;states&quot; or &quot;rooms&quot; of your game - each of these &quot;rooms&quot; can handle a specific portion of the game. For example, consider the following simple interactive fiction game (which we wrote in class):</p>
+
+<p><img src="assignmentresources/IF.png" /></p>
+
+<ul>
+	<li>In this game the user starts in the &quot;park&quot; room which has two connecting &quot;rooms&quot; - the market and the cave. In the park is an object - the bushes - which has hidden in it some money. If the user elects to look in the bushes they will find the money and be able to use it to purchase an item later on in the game.</li>
+	<li>In the &quot;market&quot; room the user can purchase a sword, but only if they have found the money in the park.</li>
+	<li>In the &quot;cave&quot; room the user can fight a dragon or run away. If the user runs away they can safely move back to the &quot;park&quot; room. If they fight the dragon they will win if they were able to purchase the sword, and they will lose if they have not purchased the sword yet.</li>
+</ul>
+
+<p>Here's a functional version of this game that is heavily commented: <a href="assignmentresources/interactive_fiction.txt" rel="noopener" target="_blank">interactive_fiction source code</a>. Note that this game takes advantage of a number of functional techniques, including:</p>
+
+<ul>
+	<li>Global variables: these variables are set up outside of any one function and are used to keep track of what has happened in the game (i.e. has the money been found?). The 'global' keyword is used within our functions to let Python know that we want to be able to both read and write to our global variables.</li>
+	<li>Infinite loops: once a user has entered into a &quot;room&quot; we need to keep the user &quot;caught&quot; here as they explore the space. This allows them to make multiple mistakes within a room until they find out the correct way to solve a particular puzzle.</li>
+	<li>Function references: functions can be stored in variables as &quot;references&quot; - this allows us to store a link to a function in a variable so that we can choose to call it later. For example:
+	<pre>
+def start():
+    while True:
+        answer = input(&quot;heads or tails?&quot;)
+        if answer == &quot;heads&quot;:
+            # store a reference to the 'heads' function
+            next_step = heads
+            break
+        elif answer == &quot;tails&quot;:
+            # store a reference to the 'tails' function
+            next_step = tails
+            break
+        else:
+            print (&quot;invalid, try again&quot;)
+
+    # now that the loop is broken we can call the function
+    # that is stored in the 'next_step' variable
+    next_step() # this will be either the 'heads' or the 'tails' function
+
+
+def heads():
+    print (&quot;Heads was flipped!&quot;)
+
+def tails():
+    print (&quot;Tails was flipped!&quot;)
+
+
+# call our start function
+start()</pre>
+	</li>
+</ul>
+
+<p>For this assignment you will be doing the following:</p>
+
+<ul>
+	<li>Plan out an interactive fiction game on a piece of paper. Your game should contain at least 5 &quot;rooms&quot;Draw out your &quot;rooms&quot; and the objects that may exist in each room. Add notes to your diagram and take a picture of your work (submit this image as part of your homework)</li>
+	<li>Begin by coding your first room (see the <a href="assignmentresources/interactive_fiction.txt" rel="noopener" target="_blank">sample program</a> to help you get started) - test your work to make sure your first room works as expected.</li>
+	<li>Move on to add in your second, third and fourth rooms. Connect these rooms by using function calls to allow the user to switch rooms when a specific command is detected.</li>
+</ul>
+
+			  <p>This program should be named as follows:
+LastNameFirstName_assign6_interactivefiction.py (for example, "KappCraig_assign6_interactivefiction.py&quot;)</p> -->

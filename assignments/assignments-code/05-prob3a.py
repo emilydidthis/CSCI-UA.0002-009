@@ -10,8 +10,6 @@ if num == 1:
     print("1 is not a prime number")
 elif num == 2:
     print("2 is a prime number!")
-elif num == 3:
-    print("3 is a prime number!")
 else:
     divisor = 2
     while divisor < num:

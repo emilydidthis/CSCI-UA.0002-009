@@ -4,8 +4,6 @@ for i in range(1, end + 1):
         print("1 is technically not a prime number.")
     elif i == 2:
         print("2 is a prime number!")
-    elif i == 3:
-        print("3 is a prime number!")
     else:
         counter = 2
         #For Loop
