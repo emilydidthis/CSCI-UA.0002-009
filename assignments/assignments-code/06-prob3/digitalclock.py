@@ -123,4 +123,39 @@ def print_number(number, width, character):
         if i == number:
             output = globals()["number_" + str(i)](width, character)
             print(output)
+
+# plus function
+def plus(width, character):
+    if width % 2 == 0:
+        pattern = vertical_line(width//2-1, 2, character*2)
+        pattern += horizontal_line(width, character)
+        pattern += vertical_line(width//2-1, 2, character*2)
+    else:
+        pattern = vertical_line(width//2, 2, character)
+        pattern += horizontal_line(width, character)
+        pattern += vertical_line(width//2, 2, character)
+    return pattern
+
+# minus function
+def minus(width, character):
+    return "\n" * 2 + (character * width) + "\n" * 2
     
+# function:   check_answer
+# input:      two numbers (number1 & number2, both integers); an answer (an integer)
+#             and an operator (+ or -, expressed as a String)
+# processing: determines if the supplied expression is correct.  for example, if the operator
+#             is "+", number1 = 1, number2 = 2 and answer = 3 then the expression is correct
+#             (1 + 2 = 3).
+# output:     returns True if the expression is correct, False if it is not correct
+
+def check_answer(num1, num2, answer, operator):
+    if operator == "+":
+        if num1 + num2 == answer:
+            return True
+        else:
+            return False
+    else:
+        if num1 - num2 == answer:
+            return True
+        else:
+            return False

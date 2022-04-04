@@ -1,12 +1,56 @@
 import digitalclock
+import random
 
-digitalclock.print_number(0, 5, '*')
-digitalclock.print_number(1, 6, '*')
-digitalclock.print_number(2, 7, '*')
-digitalclock.print_number(3, 8, '*')
-digitalclock.print_number(4, 9, '*')
-digitalclock.print_number(5, 10, '*')
-digitalclock.print_number(6, 11, '*')
-digitalclock.print_number(7, 12, '*')
-digitalclock.print_number(8, 13, '*')
-digitalclock.print_number(9, 14, '*')
+while True:
+    count = int(input("How many problems would you like to attempt? "))
+    if count < 0:
+        print("Invalid number, try again")
+    else:
+        while True:
+            width = int(input("How wide do you want your digits to be? 5-10: "))
+            if width < 5 or width > 10:
+                print("Invalid number, try again")
+            else:
+                while True:
+                    char = input("What character would you like to use? " )
+                    if len(char) > 1:
+                        print("String too long, try again")
+                    else:
+                        break
+                break
+        break
+
+print("\nHere we go!\n")
+i = 0
+correct = 0
+while i< count:
+    print("What is .....")
+    print()
+    num1 = random.randint(1, 9)
+    num2 = random.randint(1, 9)
+    operator = random.randint(0, 1)
+    #print(operator)
+    digitalclock.print_number(num1, width, char)
+
+    if operator == 0:
+        print(digitalclock.plus(width, char))
+        operator = "+"
+        #print(operator)
+    else:
+        print(digitalclock.minus(width, char))
+        operator = "-"
+        #print(operator)
+
+    digitalclock.print_number(num2, width, char)
+
+    answer = int(input("= "))
+    if digitalclock.check_answer(num1, num2, answer, operator):
+        print("Correct!")
+        correct += 1
+    else:
+        print("Sorry, that's not correct.")
+    print()
+    i += 1
+
+    
+print("\nYou got", correct, "out of", count, "correct!")
