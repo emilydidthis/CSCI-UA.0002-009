@@ -29,19 +29,33 @@ print ( string_isalpha("abc1")      )	# False
 print ( string_isalpha("")          )	# False
 '''
 
+# EVERYTHING IS CAPITAL
+# Happy Birthday
+
 def string_capitalize(word):
     proceed_space = True
     output = ""
     for c in word:
-    # check if capitalized already
-        if proceed_space:
-            if ord(c) in range(65,91):
+        # check if capitalized already
+        if ord(c) in range(65,91):
+            if proceed_space:
+                # add as is, no conversion necessary
                 output += c
+                proceed_space = False
+            # if there wasn't a space before
             else:
-                output += chr(ord(c) + 32)
-            proceed_space = False
+                # convert it to lower
+               output += chr(ord(c) + 32)
+        # otherwise, it's lowercase
         else:
-            output += c
+            #if there was a space before
+            if proceed_space:
+                #convert lower to upper
+                output += chr(ord(c) - 32)
+                proceed_space = False
+            else:
+                # add as is
+                output += c
         if c == " ":
             output += c
             proceed_space = True
