@@ -1,0 +1,5 @@
+pikachu,Abc123
+charmander,Xyz123
+squirtle,SquirtleSquad99
+Pidgey2020,Pqr123
+fearow,Pidgey2020

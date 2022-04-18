@@ -120,4 +120,41 @@ unscrambled4 = delete_characters(word4, 4)
 print ("Removing 4 characers from", word4, "->", unscrambled4)
 '''
 
+while True:
+    pattern = input("Enter an encoding pattern, 'end' to end: ")
+    word = input("Enter a word to encode/decode: ")
+    if pattern == "end":
+        break
+    for c in pattern:
+        if c == 'A':
+            print("* Added 1 character:", end=" ")
+            print(add_letters(word, 1))
+            word = add_letters(word, 1)
+        elif c == 'X':
+            print("* Deleted 1 character:", end=" ")
+            print(delete_characters(word,1))
+            word = delete_characters(word,1)
+        elif c == 'F':
+            print("* Flipped:", end=" ")
+            print(flip(word))
+            word = flip(word)
+        elif c == 'U':
+            print("* ASCII shifted up:", end=" ")
+            print(ascii_shift(word, 1))
+            word = ascii_shift(word, 1)
+        elif c == 'D':
+            print("* ASCII shifted down:", end=" ")
+            print(ascii_shift(word, -1))
+            word = ascii_shift(word, -1)
+        elif c == 'L':
+            print("* Shifted left:", end=" ")
+            print(shift_left(word))
+            word = shift_left(word)
+        elif c == 'R':
+            print("* Shifted right:", end=" ")
+            print(shift_right(word))
+            word = shift_right(word)
+        
+        
+
         
