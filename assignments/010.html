@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro to Computer Programming - Assignments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Intro to Computer Programming – Spring 2022</h1>
+        <nav>
+            <ul><a href="../index.html"><span>*&nbsp;</span>Syllabus</a></ul>
+            <ul><a href="../schedule.html"><span>*&nbsp;</span>Schedule + Class Notes</a></ul>
+            <ul><a href="../assignments.html"><span class="nav-targeted">*&nbsp;</span>Assignments</a></ul>
+            <!-- <ul><a href="resources.html"><span>*&nbsp;</span>Resources</a></ul> -->
+        </nav>
+
+        
+            <div class=" assignment-page">
+                <h2>Assignment #10</h2>
+<br>
+
+<h3>Part 1</h3>
+
+
+<p>Note that the programs you will be writing build on one another. You will want to attempt these parts in order. You can also feel free to save all of your work in one big file (call it "LastNameFirstName_assign10_part1.py")</p>
+
+<p>For this project you will be re-writing the "product database" program from Assignment 08 using dictionaries.  This will help you to compare and contrast how dictionaries and lists operate in similar yet different ways.  You'll also notice that some tasks tend to be much easier (and more efficient!) to write with dictionaries, while others may be more challenging.</p>
+
+<h3>Part 1a</h3>
+
+<p>To begin start by writing this 'validate' function which simplify the user input portion of this program:</p>
+
+<pre># function:   validate
+# input:      (1) a string to prompt the user with ('Enter a number: ')
+#             (2) a data type (string) - either 'float' or 'integer'
+#                 default this value to 'float' if none is supplied
+#             (3) the lowest possible number you can accept as part of
+#                 your validation (integer) - default to the string "unlimited"
+#                 if no integer is provided
+#             (4) the highest possible number you can accept as part of
+#                 your validation (integer) - default to the string "unlimited"
+#                 if no integer is provided
+#
+#             note: you can tell Python to assign a 'default' value to an argument
+#             by using this syntax in your function definition:
+#
+#             def foo(a, b, c="hello", d=57)
+#
+#             in this case 'a' and 'b' are required arguments and must be supplied
+#             'c' and 'd' are optional, and if they are not supplied they will be
+#             assigned the values 'hello' and 57 respectively.  for example:
+#
+#             foo(10, 20) # function receives a=10 b=20 c="hello" d=57
+#             foo(10, 20, 30)  # function receives a=10, b=20 c=30, d=57
+#             foo(10, 20, 30, 40)  # function receives a=10, b=20 c=30 d=40
+#
+# processing: continually prompts the user with the prompt provided. the user's
+#             input will be convereted to the data type requested.  if the data type
+#             conversion results in a runtime error the program should not crash but
+#             but alert the user with a print statement (i.e. Not a number, try again")
+#             if the result is successful the function will ensure that it falls within
+#             the bounds provided.
+# output:     returns the validated user input (float or int)
+def validate(prompt, datatype="float", low="unlimited", high="unlimited"):
+
+
+# TEST CODE 1
+result1 = validate("Give me a float between 1 and 10: ", "float", 1, 10)
+print (result1)
+
+# OUTPUT
+"""
+Give me a float between 1 and 10: apple
+Not a number, try again
+Give me a float between 1 and 10: -72
+Invalid range, try again
+Give me a float between 1 and 10: 12
+Invalid range, try again
+Give me a float between 1 and 10: 4
+4.0
+"""
+
+# TEST CODE 2
+result2 = validate("Give me a float: ")
+print (result1)
+
+# OUTPUT
+"""
+Give me a float: foobar
+Not a number, try again
+Give me a float: applesauce
+Not a number, try again
+Give me a float: 77.92
+77.92
+"""</pre>
+
+<h3>Part 1b</h3>
+
+<p>Next, you are going to write a dictionary implementation of the "product database" assignment.  To start copy the following dictionary into your program:</p>
+
+<pre>inventory = {
+                'soft drink': [0.99, 10],
+                'onion rings': [1.29, 5],
+                'small fries': [1.49, 20]
+            }</pre>
+            
+<p>Each 'key' in the dictionary is a product (string).  Each 'key' has a value (list) which contains the price of that product in position 0 and the amount of that product in position 1.</p>
+
+<p>You can access items in the dictionary using two sets of square brackets.  For example:</p>
+
+<pre>print ("soft drinks cost:", inventory["soft drink"][0])
+print ("we have:", inventory["soft drink"][1], "soft drinks at our store")</pre>
+
+<p>Your task is to add the following functionality to this program:</p>
+
+<ul>
+	<li>Overarching menu system</li>
+	<li>Search for a product</li>
+	<li>List all products</li>
+	<li>Add a product</li>
+	<li>Remove a product</li>
+	<li>Update a product</li>
+	<li>Report on all products</li>
+</ul>
+
+<p>Here's a sample running of this program (user input is underlined):</p>
+
+<pre>(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>foobar</u>
+Unknown command, try again
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>l</u>
+Product              Price      Quantity  
+onion rings          1.29       5         
+small fries          1.49       20        
+soft drink           0.99       10        
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>s</u>
+Enter a product name: <u>soft drink</u>
+We sell 'soft drink' at 0.99 per unit
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>s</u>
+Enter a product name: <u>apples</u>
+Sorry, we don't sell 'apples'
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>a</u>
+Enter a product name: <u>soft drink</u>
+Duplicate product name
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>a</u>
+Enter a product name: <u>apples</u>
+Enter a price: <u>-10</u>
+Invalid range, try again
+Enter a price: <u>3.50</u>
+Enter an inventory amount: <u>-10</u>
+Invalid range, try again
+Enter an inventory amount: <u>150</u>
+Invalid range, try again
+Enter an inventory amount: <u>75</u>
+Product added
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>l</u>
+Product              Price      Quantity  
+apples               3.50       75        
+onion rings          1.29       5         
+small fries          1.49       20        
+soft drink           0.99       10        
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>r</u>
+Enter a product name: <u>foobar</u>
+Unknown product name
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>r</u>
+Enter a product name: <u>small fries</u>
+Product removed
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>l</u>
+Product              Price      Quantity  
+apples               3.50       75        
+onion rings          1.29       5         
+soft drink           0.99       10        
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>u</u>
+Enter a product name: <u>apples</u>
+(n)ame, (p)rice or (a)mount? <u>p</u>
+Enter a new price: <u>2.50</u>
+Price updated
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>u</u>
+Enter a product name: <u>apples</u>
+(n)ame, (p)rice or (a)mount? <u>n</u>
+Enter a new name: <u>soft drink</u>
+Product name already exists
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>u</u>
+Enter a product name: <u>apples</u>
+(n)ame, (p)rice or (a)mount? <u>n</u>
+Enter a new name: <u>pears</u>
+Product renamed
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>l</u>
+Product              Price      Quantity  
+onion rings          1.29       5         
+pears                2.50       75        
+soft drink           0.99       10        
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>e</u>
+Total cost of all items in inventory: 203.85
+Highest priced item: 2.5 is pears
+Lowest priced item: 0.99 is soft drink
+(s)earch, (l)ist, (a)dd, (r)emove, (u)pdate, r(e)port or (q)uit: <u>q</u>
+See you soon!</pre>
+
+<p>Here are some hints on each part:</p>
+
+<ul>
+	<li>You may use any general code you that you wrote for assignment #8 (menu system, etc.)</li>
+	<li>The 'SEARCH' feature should be fairly straightforward - the KEY in the dictionary is the name of the product.  How can you test to see if a KEY is in a dictionary?</li>
+	<li>The 'LIST' feature should also be fairly easy.  How do you iterate over all KEYS in a dictionary?</li>
+	<li>The 'ADD' feature should be easy as well.  How do you add a new KEY / VALUE pair to a dictionary?  What are you storing as a value to match the sample data given in the dictionary above?   You need to make sure that the item is not in the dictionary already as a KEY before you add it. You are welcome to use your 'validate' function here.  Note that prices must never fall below $0.00.  Inventory must never fall below 0 or go above 100.</li>
+	<li>The 'REMOVE' feature should be straightforward.  How do you delete a KEY / VALUE pair from a dictionary?</li>
+	<li>'UPDATE' should be fairly easy as well.  How do you change a VALUE in a dictionary if you know the KEY associated with it?</li>
+	<li>'REPORT' will be the trickiest function to write.  For this one you will need to find three things:
+		<ul>
+			<li>The total cost of all items:  This will require that you visit all items in the dictionary and maintain some kind of accumulator</li>
+			<li>The highest priced item and the lowest priced item may be tricky since the 'max' function will not work on a dictionary.  <strong>You may not use any technique not taught in class to do this - i.e. writing a 'lambda' function.</strong>  Hint - you will need to implement the 'maximum' / 'minimum' algorithm yourself which involves the following:
+				<ul>
+					<li>Assume the first item in the list is the biggest / smallest</li>
+					<li>Visit all other items in the list and determine if they are bigger / smaller than the maximum / minimum you already know about</li>
+					<li>At the end of your investigation you will have found the biggest / smallest</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+<p>This program should be named as follows: LastNameFirstName_assign10_part1.py </p>
+
+
+
+<h3>Part 2</h3>
+
+<div class="alert alert-info">This is a solo project.  You may work as a group to help each other out, but everyone should be writing a separate file on their own computer.  You will be doing yourself a HUGE disservice by not working on this project by yourself!  If you do share tips with one another please be sure to include everyone's name at the top of your program.  Note that "sharing tips" does not mean "copied the entire program" from someone else.</div>
+
+<p>Note that the programs you will be writing build on one another. You will want to attempt these parts in order. You can also feel free to save all of your work in one big file (call it "LastNameFirstName_assign10_part2.py")</p>
+
+<p>In this program you will be writing a program that allows the user to search through a series of text files for a word or series of words.  This is not unlike the search tool that is built into your Mac or PC that you use to find text within files on your hard drive.</p>
+
+<h3>Part 2a</h3>
+
+<p>Begin by writing this convenience function - this function will be useful to make sure that all of the string data you will be working with is formatted correctly.</p>
+
+<pre># function:   cleanup_string
+# input:      a string to clean up
+# processing: (1) makes the entire string lowercase.
+#             (2) retains only alphabetic, numeric and space characters
+#                 [all punctuation and special characters removed]
+# output:     returns the cleaned up string
+def cleanup_string(data):
+
+
+
+# TEST CODE
+test1 = cleanup_string("Hello World! This is a simple test of this function!")
+print (test1)
+# hello world this is a simple test of this function
+
+test2 = cleanup_string("ABC123abc this is Another TEST!!!#@@")
+print (test2)
+# abc123abc this is another test
+
+test3 = cleanup_string("I'm so happy today! La la la la it doesn't get any better than this.")
+print (test3)
+# im so happy today la la la la it doesnt get any better than this</pre>
+
+
+<h3>Part 2b</h3>
+
+<p>Next, you will need a series of files to search.  For the purpose of this program we are providing you with a ZIP file that contains over a hundred random paragraphs of text.  These paragraphs have been obtained from <a href="https://randomwordgenerator.com/paragraph.php">this website</a>.
+
+<p><a href="assignmentresources/assignment10_data-v2.zip" target="_blank">Download this ZIP file now and extract it to your computer</a>.  Move the 'data' folder that you extract to the folder where you are writing your assignment.  Your file structure should look like the following:</p>
+
+<pre>
+assignment10/                                           (folder)
+                  LastNameFirstName_assign10_part2.py   (main program)
+                  data                                  (folder)</pre>
+
+<p>Your first task is to list all the files in this folder.  You can do this using <code>os</code> module. This module, which stands for "Operating System", is a module that allows you to (surprise!) interface with your computer's operating system.  Begin by writing this line of code to ask the module to obtain a listing of all files in this folder:</p>
+
+<pre>files = os.listdir("data")
+print (files)</pre>
+
+<p>You should see a giant list pop up that looks something like the following:</p>
+
+<pre>['ZchEuxJ9VJ.txt', 'QAih70niIq.txt', '5nf8HJibVC.txt', 'EqcAdY0ugJ.txt', 'jQWpEl8D0f.txt', 'aUAFHAlczU.txt', 
+'kiGhUVdgJw.txt', '4O35BEfqHo.txt', 'dyaYR6QkxG.txt', 'H9aHj10N12.txt', '6LU18UbNOW.txt', 'zn0wHOYTKh.txt', 
+'75Mqbf8cHp.txt', 'ybHQclO3hA.txt', 'iArzE8wnga.txt', 'hTa0TXybyF.txt', 'ggGBtZzCYW.txt', 'Y3r79bTbrM.txt', 
+'ZNZ58Kl0d9.txt', 'me43boDSOW.txt', 'acquHURwlO.txt', 'L9fMTLX60i.txt', 'Lqxjt5aRzx.txt', 'ZYPvj069vz.txt', 
+'7dcgfWlInL.txt', '3J9YCqQMTp.txt', 'OaD6XqDCkI.txt', 'jTc2P5wYw1.txt', '6UeFsAivmx.txt', 'zJM8Yoryr2.txt', 
+'pRSgQSJpA6.txt', 'BsPooo5rur.txt', '7ae3gHQjqs.txt', 'N0sGyLBGUe.txt', 'lgb3BKQoEz.txt', 'qrqpxLp2KQ.txt', 
+'cPjdOotmwy.txt', 'S0zDFkXpZW.txt', 'oNwH7nM1Bq.txt', '7M5pXQu3Rz.txt', 'E8WsyBgc0G.txt', 'WjaM7jHrN1.txt', 
+'NuLzEf11eK.txt', 'xe3FwcZu2W.txt', 'f3h6T8RHp0.txt', 'dngs7QAQ9r.txt', 'pGvBK9Imyg.txt', 'KdTbfITSUr.txt', 
+'nTwjb2SYBy.txt', 'BODtu35Ezm.txt', 'Twu89TVyEL.txt', 'kbMGPy6U8T.txt', 'qtDmB7H0Ep.txt', 'UnGLWbeB9l.txt', 
+'Dr3xkRxCmS.txt', 'A3oW947isr.txt', 'D8G59hOTC3.txt', '1IuVSeulut.txt', '6yQkXcf1RE.txt', '8Et5g4DDdz.txt', 
+'n51IgMld8q.txt', 'wiPG3pYH1c.txt', 'qPwGdEoVSL.txt', 'LDPlIhztYM.txt', 'rehIIcdVpS.txt', 'QvFoaPL0Vf.txt', 
+'65skUOjWEB.txt', 'BJHYpCnXQK.txt', 'sAOXveAnAM.txt', '04oJPOSIZo.txt', 'IGrRaunKkD.txt', 'XfBBgaBZAl.txt', 
+'MtsUegvMaR.txt', 'YZ0q1r7Bh5.txt', 'g3yB4DCPGj.txt', 'jJG5h8GyyY.txt', 'gfgOsp3KRd.txt', 't3MBKst8Ie.txt', 
+'C250ERoBsK.txt', '5NePaGLyij.txt', 'kSeqdJlQOC.txt', 'dbhh3CHmEK.txt', '57lvWwWwJW.txt', 'uXmlCvFkeU.txt', 
+'lLmBxyV94m.txt', 'JWuDKLGswj.txt', 'R2ECugDCAv.txt', 'ykNmuED6oX.txt', 'dPSKkWrzn2.txt', '540j35ofbi.txt', 
+'U7fsHOVVkb.txt', 'ipZ1RSh9U8.txt', 'zO4XalEr1D.txt', 'TiKuYRXSRj.txt', '5vxu8Zrpql.txt', 'KcoUJXv5F0.txt', 
+'a8t7ZPCksS.txt', 'AFIT30NSt1.txt', 'TJvaydS6rH.txt', 't7bFMe2gSz.txt', 'TjlRPOvB1K.txt', 'KdJgnqsBAD.txt', 
+'C4JC6Kinhc.txt', 'AMr5iGEayp.txt', 'qEm1y0syvm.txt', 'NZTv1RKC44.txt', '2gj19xXcvU.txt', 'NLgW1QmeeE.txt', 
+'6sJ5gcVmt1.txt', 'nY5moTA2CV.txt', 'VnNEmcGOut.txt', 'lQiSoeZ1vC.txt', 'PGmSUhuXrN.txt', 'pGlBmuyJQZ.txt', 
+'qFipnDHaDS.txt', 'QaB6bzIPK2.txt', '0jOHqNrSpo.txt']</pre>
+
+<p>Note that if you are on a Mac you may also see a file named '.DS_Store' - this is a 'hidden' file that sometimes gets created in a directory by your Mac to help keep track of the files in that folder.  You will want to remove this from the list if it does exist.</p>
+
+<h3>Part 2c</h3>
+
+Next you are going to write a parser that will extract the individual words from each of the files listed in this folder.  Your end goal is to create a dictionary that has a series of KEYS which represent the individual WORDS found in your files.  The VALUES in this dictionary will be a LIST of files that contain that word.  For example, the word 'happy' can be found in two files.  Your dictionary should be organized to show this for the word 'happy':</p>
+
+<pre>search = {
+	
+	'happy' : ['aUAFHAlczU.txt', 'R2ECugDCAv.txt']
+	
+}</pre>
+
+<p>As you can see, we can find the word 'happy' in these two files.  Using the KEY in the dictionary we can easily obtain this information.</p>
+
+<p>For this part of the assignment you will want to write a program that does the following:</p>
+
+<ul>
+	<li>Begin by creating a new empty dictionary called <code>search</code></li>
+	<li>Visit each item in the list you obtained from the <code>os</code> module</li>
+	<li>Open each file, read in its contents and clean it up (using your function)</li>
+	<li>Identify each word in the file (hint: how can you break apart each word?  what separates them?)</li>
+	<li>Add these words to the dictionary as keys.  Hint: if the word is a "new" word you will need to set it up for the first time.  If the word is not a "new" word you will need to update the list associated with that word.  Also make sure that you don't add the same filename to the same word twice (for example, if the word 'happy' appears 2 times in file 'ABC123.txt' you should only add 'ABC123.txt' one time to the list associated with the word happy)</li>
+	<li>When you are finished you should print out the total number of KEYS in the dictionary which represent the total # of words you parsed.  The program should generate 1679 unique words across all 117 files.</li>
+</ul>
+
+<p>For example, if you run the following code after creating the <code>search</code> dictionary you should get the following:</p>
+
+<pre>print ('happy:', search['happy'])
+print ('cat:', search['cat'])
+print ('rainbow:', search['rainbow'])
+print ('apple:', search['apple'])
+
+# OUTPUT
+'''
+happy: ['aUAFHAlczU.txt', 'R2ECugDCAv.txt']
+cat: ['jJG5h8GyyY.txt']
+rainbow: ['L9fMTLX60i.txt', 'S0zDFkXpZW.txt']
+RUNTIME ERROR (apple does not exist as a KEY in the dictionary)
+'''</pre>
+
+
+<h3>Part 2d</h3>
+
+<p>Now that you have a working dictionary of words you will be moving on to build a program that will allow users to search for a single word across all of the files.  Here's a sample running of this program (user input is underlined):</p>
+
+<pre>search for a (s)ingle word or (q)uit: <u>s</u>
+Enter a word to search for: <u>happy</u>
+'happy' can be found in 2 files
+These files are:
+* R2ECugDCAv.txt
+* aUAFHAlczU.txt
+Display these files? (y/n): <u>y</u>
+
+* R2ECugDCAv.txt
+"Explain to me again why I shouldn't cheat?" he asked. "All the others do and nobody ever gets punished for doing so. I should go about being happy losing to cheaters because I know that I don't? That's what you're telling me?"
+
+* aUAFHAlczU.txt
+He sat staring at the person in the train stopped at the station going in the opposite direction. She sat staring ahead, never noticing that she was being watched. Both trains began to move and he knew that in another timeline or in another universe, they had been happy together.
+
+search for a (s)ingle word or (q)uit: <u>s</u>
+Enter a word to search for: <u>cat</u>
+'cat' can be found in 1 files
+These files are:
+* jJG5h8GyyY.txt
+Display these files? (y/n): <u>y</u>
+
+* jJG5h8GyyY.txt
+Top Cat! The most effectual Top Cat! Who’s intellectual close friends get to call him T.C., providing it’s with dignity. Top Cat! The indisputable leader of the gang. He’s the boss, he’s a pip, he’s the championship. He’s the most tip top, Top Cat.
+
+search for a (s)ingle word or (q)uit: <u>s</u>
+Enter a word to search for: <u>apple</u>
+'apple' cannot be found
+
+search for a (s)ingle word or (q)uit: <u>foobar</u>
+Invalid command
+
+search for a (s)ingle word or (q)uit: <u>q</u></pre>
+
+<h3>Part 2e</h3>
+
+<p>Finally add in a feature to allow a user to search for multiple words that exist in the same file.  These words do not need to be in order (i.e. the search query 'happy birthday' would trigger a hit on 'happy birthday sad kitten!' as well as 'he was so happy on his birthday')</p>
+
+<p>Hint: Find all files that contain each word in your search query (i.e. all files that contain 'happy' and all files that contain 'birthday') - you might need a dictionary or a list for this.  Then find out how many files in these structures hold ALL of the words in your search query.  Here's a sample running of this part of the program:</p>
+
+<pre>search for a (s)ingle word, (m)ultiple words or (q)uit: <u>s</u>
+Enter a word to search for: <u>calm</u>
+'calm' can be found in 2 files
+These files are:
+* YZ0q1r7Bh5.txt
+* ybHQclO3hA.txt
+Display these files? (y/n): <u>y</u>
+
+* YZ0q1r7Bh5.txt
+It's not his fault. I know you're going to want to, but you can't blame him. He really has no idea how it happened. I kept trying to come up with excuses I could say to mom that would keep her calm when she found out what happened, but the more I tried, the more I could see none of them would work. He was going to get her wrath and there was nothing I could say to prevent it.
+
+* ybHQclO3hA.txt
+The rain and wind abruptly stopped, but the sky still had the gray swirls of storms in the distance. Dave knew this feeling all too well. The calm before the storm. He only had a limited amount of time before all Hell broke loose, but he stopped to admire the calmness. Maybe it would be different this time, he thought, with the knowledge deep within that it wouldn't.
+
+search for a (s)ingle word, (m)ultiple words or (q)uit: <u>m</u>
+Enter two or more words to search for: <u>calm rain</u>
+'calm rain' can be found in 1 files
+These files are:
+* ybHQclO3hA.txt
+Display these files? (y/n): <u>y</u>
+
+* ybHQclO3hA.txt
+The rain and wind abruptly stopped, but the sky still had the gray swirls of storms in the distance. Dave knew this feeling all too well. The calm before the storm. He only had a limited amount of time before all Hell broke loose, but he stopped to admire the calmness. Maybe it would be different this time, he thought, with the knowledge deep within that it wouldn't.
+
+search for a (s)ingle word, (m)ultiple words or (q)uit: <u>s</u>
+Enter a word to search for: <u>gray</u>
+'gray' can be found in 2 files
+These files are:
+* 8Et5g4DDdz.txt
+* ybHQclO3hA.txt
+Display these files? (y/n): <u>y</u>
+
+* 8Et5g4DDdz.txt
+A long black shadow slid across the pavement near their feet and the five Venusians, very much startled, looked overhead. They were barely in time to see the huge gray form of the carnivore before it vanished behind a sign atop a nearby building which bore the mystifying information "Pepsi-Cola."
+
+* ybHQclO3hA.txt
+The rain and wind abruptly stopped, but the sky still had the gray swirls of storms in the distance. Dave knew this feeling all too well. The calm before the storm. He only had a limited amount of time before all Hell broke loose, but he stopped to admire the calmness. Maybe it would be different this time, he thought, with the knowledge deep within that it wouldn't.
+
+search for a (s)ingle word, (m)ultiple words or (q)uit: <u>m</u>
+Enter two or more words to search for: <u>gray building</u>
+'gray building' can be found in 1 files
+These files are:
+* 8Et5g4DDdz.txt
+Display these files? (y/n): <u>y</u>
+
+* 8Et5g4DDdz.txt
+A long black shadow slid across the pavement near their feet and the five Venusians, very much startled, looked overhead. They were barely in time to see the huge gray form of the carnivore before it vanished behind a sign atop a nearby building which bore the mystifying information "Pepsi-Cola."
+
+search for a (s)ingle word, (m)ultiple words or (q)uit: <u>q</u></pre>
